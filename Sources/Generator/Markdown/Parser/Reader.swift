@@ -1,4 +1,4 @@
-internal struct Reader {
+struct Reader {
     private let string: String
     private(set) var currentIndex: String.Index
 

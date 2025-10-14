@@ -1,4 +1,4 @@
-internal struct MarkdownMetadata: Readable {
+struct MarkdownMetadata: Readable {
     var values = [String : String]()
 
     static func read(using reader: inout Reader) throws -> MarkdownMetadata {

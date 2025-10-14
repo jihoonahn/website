@@ -1,4 +1,4 @@
-internal struct ModifierCollection {
+struct ModifierCollection {
     private var modifiers: [Modifier.Target : [Modifier]]
 
     init(modifiers: [Modifier]) {

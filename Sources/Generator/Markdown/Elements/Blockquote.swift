@@ -1,4 +1,4 @@
-internal struct Blockquote: Fragment {
+struct Blockquote: Fragment {
     var modifierTarget: Modifier.Target { .blockquotes }
 
     private var text: FormattedText

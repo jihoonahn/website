@@ -1,4 +1,4 @@
-internal final class TextStyleMarker: Readable, HTMLConvertible {
+final class TextStyleMarker: Readable, HTMLConvertible {
     var style: TextStyle
     var rawMarkers: String
     let characterRange: Range<String.Index>

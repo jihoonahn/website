@@ -1,4 +1,4 @@
-internal struct Paragraph: Fragment {
+struct Paragraph: Fragment {
     var modifierTarget: Modifier.Target { .paragraphs }
 
     private var text: FormattedText

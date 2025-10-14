@@ -1,4 +1,4 @@
-internal struct HorizontalLine: Fragment {
+struct HorizontalLine: Fragment {
     var modifierTarget: Modifier.Target { .horizontalLines }
 
     static func read(using reader: inout Reader) throws -> HorizontalLine {

@@ -1,4 +1,4 @@
-internal protocol HTMLConvertible {
+protocol HTMLConvertible {
     func html(usingURLs urls: NamedURLCollection,
               modifiers: ModifierCollection) -> String
 }

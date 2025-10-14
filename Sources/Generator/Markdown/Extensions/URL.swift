@@ -1,1 +1,1 @@
-internal typealias URL = Substring
+typealias URL = Substring

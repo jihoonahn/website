@@ -1,4 +1,4 @@
-internal struct URLDeclaration: Readable {
+struct URLDeclaration: Readable {
     var name: String
     var url: URL
 

@@ -1,6 +1,6 @@
 import Foundation
 
-internal struct CodeBlock: Fragment {
+struct CodeBlock: Fragment {
     var modifierTarget: Modifier.Target { .codeBlocks }
 
     private static let marker: Character = "`"

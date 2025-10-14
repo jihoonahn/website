@@ -1,4 +1,4 @@
-internal struct FormattedText: Readable, HTMLConvertible, PlainTextConvertible {
+struct FormattedText: Readable, HTMLConvertible, PlainTextConvertible {
     private var components = [Component]()
 
     static func read(using reader: inout Reader) -> Self {

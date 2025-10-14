@@ -1,4 +1,4 @@
-internal struct Heading: Fragment {
+struct Heading: Fragment {
     var modifierTarget: Modifier.Target { .headings }
     var level: Int
 

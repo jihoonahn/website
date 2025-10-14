@@ -25,7 +25,7 @@ public struct Markdown {
     private let titleHeading: Heading?
     private var titleStorage = TitleStorage()
 
-    internal init(html: String,
+    init(html: String,
                   titleHeading: Heading?,
                   metadata: [String : String]) {
         self.html = html

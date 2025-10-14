@@ -1,4 +1,4 @@
-internal struct Link: Fragment {
+struct Link: Fragment {
     var modifierTarget: Modifier.Target { .links }
 
     var target: Target

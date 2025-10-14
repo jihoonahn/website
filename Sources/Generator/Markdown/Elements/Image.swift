@@ -1,4 +1,4 @@
-internal struct Image: Fragment {
+struct Image: Fragment {
     var modifierTarget: Modifier.Target { .images }
 
     private var link: Link

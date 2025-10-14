@@ -1,5 +1,4 @@
 import Foundation
-import Markdown
 import Logging
 import File
 import Command

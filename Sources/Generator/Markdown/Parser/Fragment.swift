@@ -1,1 +1,1 @@
-internal typealias Fragment = Readable & Modifiable & HTMLConvertible & PlainTextConvertible
+typealias Fragment = Readable & Modifiable & HTMLConvertible & PlainTextConvertible

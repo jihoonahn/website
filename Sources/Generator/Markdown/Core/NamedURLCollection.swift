@@ -1,4 +1,4 @@
-internal struct NamedURLCollection {
+struct NamedURLCollection {
     private let urlsByName: [String : URL]
 
     init(urlsByName: [String : URL]) {

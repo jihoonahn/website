@@ -1,4 +1,4 @@
-internal struct List: Fragment {
+struct List: Fragment {
     var modifierTarget: Modifier.Target { .lists }
 
     private var listMarker: Character

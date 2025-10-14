@@ -1,4 +1,4 @@
-internal extension Substring {
+extension Substring {
     func trimmingLeadingWhitespaces() -> Self {
         drop(while: { $0.isWhitespace })
     }

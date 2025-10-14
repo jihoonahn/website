@@ -1,4 +1,4 @@
-internal enum TextStyle {
+enum TextStyle {
     case italic
     case bold
     case strikethrough

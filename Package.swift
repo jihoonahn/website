@@ -17,7 +17,6 @@ let package = Package(
         ),
     ],
     dependencies: [
-        .package(url: "https://github.com/swiftlang/swift-markdown", from: "0.7.1"),
         .package(url: "https://github.com/apple/swift-log", from: "1.6.4"),
         .package(url: "https://github.com/pelagornis/swift-file", from: "1.3.1"),
         .package(url: "https://github.com/pelagornis/swift-command", from: "1.3.1")
@@ -45,7 +44,6 @@ let package = Package(
         .target(
             name: "Generator",
             dependencies: [
-                .product(name: "Markdown", package: "swift-markdown"),
                 .product(name: "Command", package: "swift-command"),
                 .product(name: "File", package: "swift-file"),
                 .product(name: "Logging", package: "swift-log"),

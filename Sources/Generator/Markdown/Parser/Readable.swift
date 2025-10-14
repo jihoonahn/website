@@ -1,4 +1,4 @@
-internal protocol Readable {
+protocol Readable {
     static func read(using reader: inout Reader) throws -> Self
 }
 

@@ -1,3 +1,3 @@
-internal protocol Modifiable {
+protocol Modifiable {
     var modifierTarget: Modifier.Target { get }
 }

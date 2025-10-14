@@ -1,4 +1,4 @@
-internal extension Character {
+extension Character {
     var escaped: String? {
         switch self {
         case ">": return "&gt;"
