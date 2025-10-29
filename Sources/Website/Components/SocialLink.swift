@@ -29,7 +29,7 @@ struct SocialLink: Component {
                 }
                 .class("flex-shrink-0")
             }
-            .class("flex items-center gap-4 p-6")
+            .class("flex items-center gap-4 px-6 py-4")
         }
         .class("bg-black border border-neutral-800 block w-full rounded-full")
     }
