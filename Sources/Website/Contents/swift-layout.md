@@ -255,11 +255,11 @@ Stack을 처음에 Layout으로 구성했다가, 조금만 복잡한 로직이 �
 
 Example앱들도
 
-<img width = 50% src="https://github.com/user-attachments/assets/bb9c9a83-63c1-4f3b-8a75-d5dee22291b5" />
-<img width = 50% src="https://github.com/user-attachments/assets/e7a47f4a-ac94-4c26-b293-51dac9c9cccb" />
-<img width = 50% src="https://github.com/user-attachments/assets/d4fb1ba4-b8c4-4199-b1ef-defe8d7e747d" />
-<img width = 50% src="https://github.com/user-attachments/assets/2f7aa888-564f-44aa-a7dc-55d0a3fe5c65" />
-<img width = 50% src="https://github.com/user-attachments/assets/d9e50dc9-48cb-4055-868c-4b0b3d6355f6" />
+<img width = 25% src="https://github-production-user-asset-6210df.s3.amazonaws.com/68891494/527558632-bb9c9a83-63c1-4f3b-8a75-d5dee22291b5.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20251217%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251217T123349Z&X-Amz-Expires=300&X-Amz-Signature=1f40e1bb107d4c86628b1b3511880958055c5e4e820cd7633d71f4793172bd2e&X-Amz-SignedHeaders=host" />
+<img width = 25% src="https://github-production-user-asset-6210df.s3.amazonaws.com/68891494/527558630-e7a47f4a-ac94-4c26-b293-51dac9c9cccb.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20251217%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251217T123336Z&X-Amz-Expires=300&X-Amz-Signature=f3e207fae8c837ec77644e8ad554a3dfb47376e1438b655633fbde152b60add8&X-Amz-SignedHeaders=host" />
+<img width = 25% src="https://github-production-user-asset-6210df.s3.amazonaws.com/68891494/527558628-d4fb1ba4-b8c4-4199-b1ef-defe8d7e747d.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20251217%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251217T123320Z&X-Amz-Expires=300&X-Amz-Signature=aa6566a3dd83b72ad1e64d362d6492475e64b5bc76dba86a9e117e0c73b0f234&X-Amz-SignedHeaders=host" />
+<img width = 25% src="https://github-production-user-asset-6210df.s3.amazonaws.com/68891494/527558629-2f7aa888-564f-44aa-a7dc-55d0a3fe5c65.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20251217%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251217T123301Z&X-Amz-Expires=300&X-Amz-Signature=bb7191eb1094f2e8de0c2c2af9e13818a82a1be6c8ba91b6c31a4726bfc0b6f7&X-Amz-SignedHeaders=host" />
+<img width = 25% src="https://github-production-user-asset-6210df.s3.amazonaws.com/68891494/527558631-d9e50dc9-48cb-4055-868c-4b0b3d6355f6.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20251217%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20251217T123247Z&X-Amz-Expires=300&X-Amz-Signature=121f05c7f2624221733f35510149f58da3e5669682dbb41fc3e7eb27b5ff69a4&X-Amz-SignedHeaders=host" />
 
 이렇게 잘 작동을 하니 개발하면서 정말 만족도가 높았습니다. 개발을 하며 Layout System에 대해 더욱 더 깊은 지식과, 워낙 난이도가 높은 작업이다보니 저의 개발 능력도 한단계 더 올라간것 같습니다, 추후 이것으로 앱 하나를 만들어볼 생각하니 벌써부터 침이.. 쓰읍
 
