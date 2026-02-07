@@ -2,7 +2,7 @@
 title: Swift Layout 제작기
 date: 2025-12-15 11:00
 tags: Swift, Layout, SwiftUI DSL, Manual-Layout
-image: swift-layout.svg
+image: thumbnail/swift-layout.svg
 description: UIKit 기반 Manual Layout을 사용하는 SwiftUI DSL 라이브러리 제작기 입니다.
 ---
 

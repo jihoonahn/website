@@ -2,7 +2,7 @@
 title: 제 1회 IGA 발표 회고록
 date: 2023-07-10 13:22
 tags: Recollection, Announcement
-image: iga-ios-1.svg
+image: thumbnail/iga-ios-1.svg
 description: IGA 발표 회고
 ---
 

@@ -59,6 +59,8 @@ public struct Content {
         }
     }
 
+    /// 하위 폴더(예: Contents/Posts)의 .md도 모두 한 리스트로 평탄하게 반환합니다.
+    /// 예: Contents/*.md + Contents/Posts/*.md → 모두 /posts/{slug}/ 로 노출
     private func generatePages(from basePath: String, relativePath: String) throws -> [Page] {
         let fullPath = basePath.isEmpty ? relativePath : (relativePath.isEmpty ? basePath : "\(basePath)/\(relativePath)")
         
@@ -79,14 +81,8 @@ public struct Content {
             fileManager.fileExists(atPath: itemPath, isDirectory: &isDirectory)
             
             if isDirectory.boolValue {
-                let subPages = try generatePages(from: fullPath, relativePath: item)
-                if !subPages.isEmpty {
-                    pages.append(Page(
-                        name: item.capitalized,
-                        path: item,
-                        children: subPages
-                    ))
-                }
+                let subPages = try generatePages(from: basePath, relativePath: relativePath.isEmpty ? item : "\(relativePath)/\(item)")
+                pages.append(contentsOf: subPages)
             } else if item.hasSuffix(".md") {
                 let filePath = Path(itemPath)
                 let file = try File(path: filePath)
@@ -97,7 +93,7 @@ public struct Content {
                 }
 
                 let post = try Post.from(file: item, content: content)
-                let postHTML = layout(post, posts) // 이제 모든 포스트가 로드된 상태
+                let postHTML = layout(post, posts)
                 
                 pages.append(Page(
                     name: post.metadata.title,

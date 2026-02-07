@@ -50,9 +50,11 @@ public final class Generator: Sendable {
         try setupDistFolder()
         try buildTailwindCSS()
         try copyPublicFiles()
+        try enrichPortfolioWithGitHub()
         try generatePages()
         try generateRSSFeed()
         try generateSitemap()
+        try generatePostsJSON()
         
         logger.info("✅ Website generated successfully!")
     }
@@ -115,8 +117,60 @@ public final class Generator: Sendable {
         
         logger.info("✅ Copied \(copiedCount) file(s) from Public folder")
     }
-    
-    
+
+    private func enrichPortfolioWithGitHub() throws {
+        let path = "\(distPath)/portfolio.json"
+        let fileManager = FileManager.default
+        guard fileManager.fileExists(atPath: path) else {
+            logger.info("ℹ️  portfolio.json not found, skipping GitHub enrich")
+            return
+        }
+        let data = try Data(contentsOf: Foundation.URL(fileURLWithPath: path))
+        guard var top = try JSONSerialization.jsonObject(with: data) as? [String: Any],
+              var projects = top["projects"] as? [[String: Any]] else {
+            logger.info("ℹ️  portfolio.json invalid structure, skipping GitHub enrich")
+            return
+        }
+        for i in projects.indices {
+            guard (projects[i]["group"] as? String) == "Opensource",
+                  let repoRaw = projects[i]["repo"] as? String,
+                  !repoRaw.isEmpty else { continue }
+            let repo = repoRaw.trimmingCharacters(in: .whitespacesAndNewlines)
+            guard let url = Foundation.URL(string: "https://api.github.com/repos/\(repo)") else { continue }
+            var req = URLRequest(url: url)
+            req.setValue("application/vnd.github.v3+json", forHTTPHeaderField: "Accept")
+            let (fetchData, _, _) = Self.syncDataTask(with: req)
+            guard let fetchData = fetchData,
+                  let repoInfo = try? JSONSerialization.jsonObject(with: fetchData) as? [String: Any] else {
+                logger.warning("  ⚠️  GitHub API failed for \(repo)")
+                continue
+            }
+            if let stars = repoInfo["stargazers_count"] as? Int {
+                projects[i]["stars"] = stars
+            }
+            if let desc = repoInfo["description"] as? String {
+                projects[i]["description"] = desc
+            }
+            logger.info("  ✓ Enriched: \(repo)")
+        }
+        top["projects"] = projects
+        let outData = try JSONSerialization.data(withJSONObject: top)
+        try outData.write(to: Foundation.URL(fileURLWithPath: path))
+        logger.info("✅ Portfolio enriched with GitHub stars/description")
+    }
+
+    private static func syncDataTask(with request: URLRequest) -> (Data?, URLResponse?, Error?) {
+        final class Box { var value: (Data?, URLResponse?, Error?) = (nil, nil, nil) }
+        let box = Box()
+        let semaphore = DispatchSemaphore(value: 0)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            box.value = (data, response, error)
+            semaphore.signal()
+        }.resume()
+        semaphore.wait()
+        return box.value
+    }
+
     private func generatePages() throws {
         logger.info("Generating static pages...")
 
@@ -170,6 +224,35 @@ public final class Generator: Sendable {
         
         logger.info("  ✓ Generated: Sitemap -> \(distPath)/sitemap.xml")
         logger.info("✅ Sitemap generation complete")
+    }
+    
+    private func generatePostsJSON() throws {
+        struct PostListItem: Encodable {
+            let title: String
+            let slug: String
+            let date: String
+            let description: String?
+            let image: String?
+            let tags: [String]
+        }
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime]
+        let items = posts.sorted { $0.metadata.date > $1.metadata.date }.map { post in
+            PostListItem(
+                title: post.metadata.title,
+                slug: post.slug,
+                date: formatter.string(from: post.metadata.date),
+                description: post.metadata.description,
+                image: post.metadata.image,
+                tags: post.metadata.tags
+            )
+        }
+        let data = try JSONEncoder().encode(items)
+        guard let jsonString = String(data: data, encoding: .utf8) else { return }
+        let jsonPath = Path("\(distPath)/posts.json")
+        let file = try File(path: jsonPath)
+        try file.write(jsonString)
+        logger.info("  ✓ Generated: posts.json -> \(distPath)/posts.json")
     }
     
     private func generatePage(_ page: Page, basePath: String) throws {

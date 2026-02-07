@@ -2,7 +2,7 @@
 title: Publish 소개
 date: 2023-08-22 16:51
 tags: Swift, Publish, Web, Theory
-image: publish-introduce.svg
+image: thumbnail/publish-introduce.svg
 description: Swift로 Static Site 만들기
 ---
 

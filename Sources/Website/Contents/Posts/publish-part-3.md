@@ -2,7 +2,7 @@
 title: Publish 사용하기 part 3
 date: 2023-11-18 15:48
 tags: Swift, Publish, Web, Theory
-image: publish-part-3.svg
+image: thumbnail/publish-part-3.svg
 description: Swift publish 배포하기
 ---
 

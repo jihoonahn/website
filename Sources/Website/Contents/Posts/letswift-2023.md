@@ -2,7 +2,7 @@
 title: LetSwift 2023 회고록
 date: 2023-12-13 16:20
 tags: Recollection, Announcement
-image: letswift-2023.svg
+image: thumbnail/letswift-2023.svg
 description: LetSwift 2023 발표 회고
 ---
 

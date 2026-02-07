@@ -4,13 +4,21 @@ import Web
 
 let arguments = CommandLine.arguments
 
-var content = Content(postsPerPage: postsPerPage) { post, allPosts in
+// Posts: Sources/Website/Contents/Posts/*.md → /posts/
+var contentPosts = Content(path: "Sources/Website/Contents/Posts", postsPerPage: postsPerPage) { post, allPosts in
     PostLayout(post: post, allPosts: allPosts)
         .build()
 }
+let contentPostPages = try contentPosts.load()
+let allPosts = contentPosts.posts
 
-let contentPages = try content.load()
-let allPosts = content.posts
+// Projects: Sources/Website/Contents/Projects/*.md → /projects/
+var contentProjects = Content(path: "Sources/Website/Contents/Projects", postsPerPage: 10) { post, allProjects in
+    ProjectLayout(post: post, allPosts: allProjects)
+        .build()
+}
+let contentProjectPages = try contentProjects.load()
+let allProjects = contentProjects.posts
 
 var paginationPages: [Page] = []
 let postsPerPage = 10
@@ -20,12 +28,12 @@ for pageNumber in 1...totalPages {
     let pageHTML = postIndex(posts: allPosts, page: pageNumber, postsPerPage: postsPerPage)
     let pagePath = pageNumber == 1 ? "posts" : "posts/page/\(pageNumber)"
     let pageName = pageNumber == 1 ? "Posts" : "Posts Page \(pageNumber)"
-    
+
     paginationPages.append(Page(
         name: pageName,
         path: pagePath,
         html: pageHTML,
-        children: pageNumber == 1 ? contentPages : [
+        children: pageNumber == 1 ? contentPostPages : [
             Page(
                 name: pageName,
                 path: "index.html",
@@ -34,6 +42,13 @@ for pageNumber in 1...totalPages {
         ]
     ))
 }
+
+let projectsPage = Page(
+    name: "Projects",
+    path: "projects",
+    html: projectIndex(projects: allProjects),
+    children: contentProjectPages
+)
 
 let pages = [
     Page(
@@ -47,6 +62,7 @@ let pages = [
         html: error()
     )
 ] + paginationPages + [
+    projectsPage,
     Page(
         name: "About",
         path: "about",
@@ -67,19 +83,20 @@ do {
     if arguments.contains("preview") || arguments.contains("--preview") {
         print("\n🌐 Starting preview server...")
         
-        // 사용 가능한 포트 찾기
-        let availablePort = findAvailablePort(startingFrom: 8000)
-        print("📍 Open http://localhost:\(availablePort) in your browser")
+        let previewPort = 8000
+        killProcessOnPort(previewPort)
+        
+        print("📍 Open http://localhost:\(previewPort) in your browser")
         print("⌨️  Press Ctrl+C to stop the server\n")
         
         // Python 서버를 백그라운드에서 실행
         let process = Process()
         process.executableURL = URL(fileURLWithPath: "/usr/bin/python3")
-        process.arguments = ["-m", "http.server", "\(availablePort)", "--directory", "dist"]
+        process.arguments = ["-m", "http.server", "\(previewPort)", "--directory", "dist"]
         
         do {
             try process.run()
-            print("✅ Preview server is running at http://localhost:\(availablePort)")
+            print("✅ Preview server is running at http://localhost:\(previewPort)")
             print("   Serving files from: dist/\n")
             
             // 서버가 계속 실행되도록 대기
@@ -97,27 +114,12 @@ do {
     exit(1)
 }
 
-func findAvailablePort(startingFrom port: Int) -> Int {
-    for testPort in port...(port + 100) {
-        let socket = socket(AF_INET, SOCK_STREAM, 0)
-        if socket == -1 { continue }
-
-        var addr = sockaddr_in()
-        addr.sin_family = sa_family_t(AF_INET)
-        addr.sin_port = in_port_t(testPort).bigEndian
-        addr.sin_addr.s_addr = in_addr_t(INADDR_LOOPBACK).bigEndian
-        
-        let result = withUnsafePointer(to: &addr) {
-            $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {
-                bind(socket, $0, socklen_t(MemoryLayout<sockaddr_in>.size))
-            }
-        }
-        
-        close(socket)
-        
-        if result == 0 {
-            return testPort
-        }
-    }
-    return port
+func killProcessOnPort(_ port: Int) {
+    let killProcess = Process()
+    killProcess.executableURL = URL(fileURLWithPath: "/usr/bin/env")
+    killProcess.arguments = ["sh", "-c", "lsof -ti :\(port) | xargs kill -9 2>/dev/null || true"]
+    killProcess.standardOutput = FileHandle.nullDevice
+    killProcess.standardError = FileHandle.nullDevice
+    try? killProcess.run()
+    killProcess.waitUntilExit()
 }

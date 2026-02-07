@@ -2,7 +2,7 @@
 title: SwiftUI에 MVVM이 필요할까요?
 date: 2022-9-21 12:00
 tags: Swift, Architecture, SwiftUI, Debate
-image: swiftui-need-mvvm.svg
+image: thumbnail/swiftui-need-mvvm.svg
 description: 요즘 이슈가 되고 있는 내용으로, 과연 SwiftUI에는 MVVM이 필요한지에 대한 저의 주관적인 생각을 담은 글입니다.
 ---
 

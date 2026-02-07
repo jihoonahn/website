@@ -4,9 +4,8 @@
   "private": true,
   "version": "0.0.1",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview",
+    "dev": "npm run css:watch",
+    "build": "npm run css:build",
     "css:build": "tailwindcss -i ./Sources/Website/Styles/global.css -o ./dist/global.css --minify",
     "css:watch": "tailwindcss -i ./Sources/Website/Styles/global.css -o ./dist/global.css --watch"
   },

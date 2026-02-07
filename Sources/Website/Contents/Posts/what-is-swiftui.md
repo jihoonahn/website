@@ -2,7 +2,7 @@
 title: SwiftUI 소개
 date: 2022-10-20 17:02
 tags: Tutorial, SwiftUI, Theory
-image: what-is-swiftui.svg
+image: thumbnail/what-is-swiftui.svg
 description: 선언형 UI로 생산성을 높여주는 SwiftUI에 대한 설명입니다.
 ---
 

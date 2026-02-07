@@ -2,7 +2,7 @@
 title: 와글와글 제4회 발표 회고록
 date: 2023-02-11 5:25
 tags: Recollection, Announcement
-image: yackety-yak-ios-4.svg
+image: thumbnail/yackety-yak-ios-4.svg
 description: 와글와글 iOS 제 4회 발표 회고
 ---
 

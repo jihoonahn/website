@@ -29,7 +29,8 @@ let package = Package(
                 .target(name: "Generator")
             ],
             exclude: [
-                "Styles/global.css"
+                "Styles/global.css",
+                "Contents"
             ],
             swiftSettings: [
                 .enableUpcomingFeature("StrictConcurrency")

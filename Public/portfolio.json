@@ -1,0 +1,17 @@
+{
+  "github": "jihoonahn",
+  "projects": [
+    {"title": "DaySquare", "description": "하루를 위한 앱", "image": "/app/daysquare/Icon.svg", "url": "/projects/daysquare", "group": "App"},
+    {"title": "Layout", "repo": "pelagornis/swift-layout", "group": "Opensource"},
+    {"title": "RefineUI System Icons", "repo": "pelagornis/refineui-system-icons", "group": "Opensource"},
+    {"title": "Rex", "repo": "pelagornis/swift-rex", "group": "Opensource"},
+    {"title": "Network", "repo": "pelagornis/swift-network", "group": "Opensource"},
+    {"title": "DesignTuist", "repo": "jihoonme/designtuist", "group": "Opensource"},
+    {"title": "TuistUI", "repo": "jihoonme/tuistui", "group": "Opensource"},
+    {"title": "File", "repo": "pelagornis/swift-file", "group": "Opensource"},
+    {"title": "Command", "repo": "pelagornis/swift-command", "group": "Opensource"},
+    {"title": "Let's Swift 2023", "description": "LetSwift 컨퍼런스 발표", "date": "2023-12-13", "url": "https://www.youtube.com/watch?v=sh66E-wYOA4", "group": "Speaker"},
+    {"title": "IGA iOS 2023", "description": "iOS Meets ML 발표", "date": "2023-07-08", "url": "https://www.youtube.com/watch?v=ugNe2yFBRDM", "group": "Speaker"},
+    {"title": "제 4회 와글와글 iOS", "description": "와글와글 iOS 발표", "date": "2023-02-05", "url": "https://www.youtube.com/watch?v=rDlcnt31re0", "group": "Speaker"}
+  ]
+}
