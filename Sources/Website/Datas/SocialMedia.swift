@@ -44,7 +44,7 @@ extension SocialMediaLink {
         SocialMediaLink(
             title: "Resume",
             description: "Download my CV",
-            url: "https://jihoon.me/resume.pdf",
+            url: "https://docs.google.com/document/d/e/2PACX-1vRSImTTwJv3ZqksnlaEQQ6XkO7u-lPXjjHvi81Hej5gZtc3BjKlcDMNmqzt6ul_YoWYoohcUApshH3n/pub",
             icon: TextAreaIcon()
         )
     }
