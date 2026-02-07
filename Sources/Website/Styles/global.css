@@ -1129,8 +1129,9 @@ body {
   pointer-events: none;
 }
 /* iPad: 고정 비율 4/3 */
+/* iPad 화면 비율: 2360 x 1640 (height/width = 1640/2360 ≈ 69.49%) */
 .device-mockup--ipad .device-mockup__screen {
-  padding-bottom: 75%;
+  padding-bottom: 69.49%;
   border-radius: 1.125rem;
 }
 .device-mockup--ipad .device-mockup__screen::before {
