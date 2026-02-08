@@ -78,10 +78,6 @@ struct ContentDetailLayout: HTMLConvertable {
                                     })
                                 }
                                 .class("screen-carousel-dots")
-                                Span {
-                                    Text("슬라이드 하면서 페이지 보여줌")
-                                }
-                                .class("screen-carousel-caption")
                             }
                             .class("screen-carousel-footer")
                         }

@@ -98,10 +98,6 @@ struct ProjectLayout: HTMLConvertable {
                             .class("project-mockup-device-row")
                             .attribute(named: "data-current-platform", value: defaultPlatformKey)
 
-                            Span {
-                                Text("슬라이드 하면서 페이지 보여줌")
-                            }
-                            .class("device-carousel-caption")
                         }
                         .class("project-mockup-device")
                     }
