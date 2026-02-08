@@ -11,6 +11,7 @@ screens_ipad: app/daysquare/iPad/login.svg, app/daysquare/iPad/home.svg, app/day
 
 ## Feature
 
+- The Moduler Architecture 기반의 확장성 높은 설계
 - TimeLine 기반으로 한눈에 하루 일정을 확인할 수 있습니다.
 - AlamKit을 사용해서 알람을 바로 추가, 수정 가능한 가능합니다.
 - 일정이 진행되는 시간이 되면, 로컬에서 푸시 알람을 보내줍니다.
