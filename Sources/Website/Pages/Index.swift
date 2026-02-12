@@ -22,7 +22,7 @@ func index() -> HTML {
                     .class("index-content hidden")
                     .attribute(named: "aria-live", value: "polite")
             }
-            .class("index-main-inner max-w-2xl mx-auto px-5 pt-28 pb-20 min-h-screen")
+            .class("index-main-inner max-w-2xl mx-auto px-6 pt-28 pb-20 min-h-screen")
             .id("index-main")
 
             Script {
