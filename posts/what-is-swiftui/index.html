@@ -1,0 +1,114 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"/><meta property="og:site_name" content="SwiftUI 소개"/><link rel="canonical" href="https://jihoon.me"/><meta name="twitter:url" content="https://jihoon.me"/><meta property="og:url" content="https://jihoon.me"/><title>SwiftUI 소개</title><meta name="twitter:title" content="SwiftUI 소개"/><meta property="og:title" content="SwiftUI 소개"/><meta name="description" content="---
+title: SwiftUI 소개
+date: 2022-10-20 17:02
+tags: Tutorial, SwiftUI, Theory
+image: thumbnail/what-is-swiftui.svg
+description: 선언형 UI로 생산성을 높여주는 Swift"/><meta name="twitter:description" content="---
+title: SwiftUI 소개
+date: 2022-10-20 17:02
+tags: Tutorial, SwiftUI, Theory
+image: thumbnail/what-is-swiftui.svg
+description: 선언형 UI로 생산성을 높여주는 Swift"/><meta property="og:description" content="---
+title: SwiftUI 소개
+date: 2022-10-20 17:02
+tags: Tutorial, SwiftUI, Theory
+image: thumbnail/what-is-swiftui.svg
+description: 선언형 UI로 생산성을 높여주는 Swift"/><meta name="twitter:card" content="summary_large_image"/><link rel="canonical" href="https://jihoon.me"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@4"/><link rel="stylesheet" href="/global.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico" type="/image/png"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to SwiftUI 소개"/></head><body><header class="fixed top-8 left-0 right-0 flex justify-between items-center px-6 max-w-2xl mx-auto z-99"><nav class="flex space-x-3 header-container"><div class="tooltip-container relative group" style=".tooltip-container:hover .tooltip { opacity: 1; visibility: visible; }"><a href="/" class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18.3966 9.54817L12.3966 5.42317C12.1577 5.25894 11.8423 5.25894 11.6034 5.42317L5.60343 9.54817L4.86694 8.47692L10.8669 4.35192C11.5494 3.88269 12.4506 3.88269 13.1331 4.35192L19.1331 8.47692C19.6758 8.85003 20 9.46641 20 10.125V17.0729C20 18.7298 18.6569 20.0729 17 20.0729H14.5C13.9477 20.0729 13.5 19.6252 13.5 19.0729V16.0729C13.5 15.5207 13.0523 15.0729 12.5 15.0729H11.5C10.9477 15.0729 10.5 15.5207 10.5 16.0729V19.0729C10.5 19.6252 10.0523 20.0729 9.5 20.0729H7C5.34315 20.0729 4 18.7298 4 17.0729V10.125C4 9.46641 4.32423 8.85003 4.86694 8.47692L5.60343 9.54817C5.41348 9.67876 5.3 9.89449 5.3 10.125V17.0729C5.3 18.0118 6.06112 18.7729 7 18.7729H9.2V16.0729C9.2 14.8027 10.2297 13.7729 11.5 13.7729H12.5C13.7703 13.7729 14.8 14.8027 14.8 16.0729V18.7729H17C17.9389 18.7729 18.7 18.0118 18.7 17.0729V10.125C18.7 9.89449 18.5865 9.67876 18.3966 9.54817Z" fill="currentColor"></path></svg></a><div class="tooltip absolute z-50 px-3 py-2 text-sm text-neutral-100 bg-neutral-900 border border-neutral-700 rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 pointer-events-none whitespace-nowrap top-full left-1/2 transform -translate-x-1/2 mt-3" style="transition-delay: 200ms;">Index</div></div><div class="tooltip-container relative group" style=".tooltip-container:hover .tooltip { opacity: 1; visibility: visible; }"><a href="/posts" class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.2929 19.7071C12.1054 19.8946 11.851 20 11.5858 20H5.9994C4.89483 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H18C19.1046 4 20 4.89543 20 6V11.5858C20 11.851 19.8946 12.1054 19.7071 12.2929L12.2929 19.7071ZM18.45 11.35C18.5881 11.35 18.7 11.2381 18.7 11.1V6C18.7 5.6134 18.3866 5.3 18 5.3H6C5.6134 5.3 5.3 5.6134 5.3 6V18C5.3 18.3871 5.61331 18.7 5.9994 18.7H11.1C11.2381 18.7 11.35 18.5881 11.35 18.45V13.9994C11.35 12.5356 12.5367 11.35 14 11.35H18.45ZM13.0768 17.0847C12.9193 17.2422 12.65 17.1307 12.65 16.908V13.9994C12.65 13.2541 13.2542 12.65 14 12.65H16.908C17.1307 12.65 17.2422 12.9193 17.0847 13.0768L13.0768 17.0847Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path></svg></a><div class="tooltip absolute z-50 px-3 py-2 text-sm text-neutral-100 bg-neutral-900 border border-neutral-700 rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 pointer-events-none whitespace-nowrap top-full left-1/2 transform -translate-x-1/2 mt-3" style="transition-delay: 200ms;">Posts</div></div><div class="tooltip-container relative group" style=".tooltip-container:hover .tooltip { opacity: 1; visibility: visible; }"><a href="/about" class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.2513 12C17.7695 12 19.0483 13.2762 18.4673 14.6788C18.1156 15.5281 17.5999 16.2997 16.9499 16.9497C16.2999 17.5998 15.5282 18.1154 14.679 18.4672C13.8297 18.8189 12.9194 19 12.0002 19C11.0809 19 10.1707 18.8189 9.32139 18.4672C8.47212 18.1154 7.70044 17.5998 7.05043 16.9497C6.40042 16.2997 5.8848 15.5281 5.53302 14.6788C4.95205 13.2762 6.23089 12 7.74905 12L16.2513 12ZM16.0307 16.0305C16.56 15.5012 16.9798 14.8729 17.2663 14.1813C17.3167 14.0597 17.3152 13.9764 17.3038 13.9178C17.291 13.8525 17.255 13.7678 17.1723 13.6742C16.9971 13.476 16.6608 13.3 16.2513 13.3H7.74905C7.33956 13.3 7.00324 13.476 6.82801 13.6742C6.74531 13.7678 6.70931 13.8525 6.69656 13.9178C6.68511 13.9764 6.6837 14.0597 6.73406 14.1813C7.02052 14.8729 7.44038 15.5012 7.96967 16.0305C8.49896 16.5598 9.12733 16.9797 9.81888 17.2661C10.5104 17.5526 11.2516 17.7 12.0002 17.7C12.7487 17.7 13.4899 17.5526 14.1815 17.2661C14.873 16.9797 15.5014 16.5598 16.0307 16.0305Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path><path d="M10.6909 10.7C9.69009 10.2138 9.00018 9.18746 9.00018 8C9.00018 6.34315 10.3433 5 12.0002 5C13.657 5 15.0002 6.34315 15.0002 8C15.0002 9.18746 14.3103 10.2138 13.3094 10.7C12.9138 10.8922 12.4696 11 12.0002 11C11.5308 11 11.0866 10.8922 10.6909 10.7ZM12.0002 9.7C12.9391 9.7 13.7002 8.93888 13.7002 8C13.7002 7.06112 12.9391 6.3 12.0002 6.3C11.0613 6.3 10.3002 7.06112 10.3002 8C10.3002 8.93888 11.0613 9.7 12.0002 9.7Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path></svg></a><div class="tooltip absolute z-50 px-3 py-2 text-sm text-neutral-100 bg-neutral-900 border border-neutral-700 rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 pointer-events-none whitespace-nowrap top-full left-1/2 transform -translate-x-1/2 mt-3" style="transition-delay: 200ms;">About</div></div></nav><div class="header-container"><button class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12" onclick="document.querySelector('#docsearch button').click()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.0155 13.9887C13.0105 13.9925 13.0055 13.9962 13.0005 14C12.1647 14.6279 11.1258 15 10 15C7.23858 15 5 12.7614 5 10C5 7.23858 7.23858 5 10 5C12.7614 5 15 7.23858 15 10C15 11.1326 14.6234 12.1772 13.9887 13.0155L17.3795 16.4063C17.4563 16.483 17.5458 16.5834 17.6325 16.6971L17.6426 16.7105C17.9182 17.076 18.1597 17.5725 17.8661 17.8661C17.5725 18.1597 17.076 17.9182 16.7105 17.6426L16.6971 17.6325C16.5834 17.5458 16.483 17.4563 16.4063 17.3795L13.0155 13.9887ZM10 13.7C7.95655 13.7 6.3 12.0435 6.3 10C6.3 7.95655 7.95655 6.3 10 6.3C12.0435 6.3 13.7 7.95655 13.7 10C13.7 11.2095 13.121 12.2834 12.2196 12.9607C11.6013 13.4252 10.8346 13.7 10 13.7Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path></svg></button></div><div id="docsearch" class="hidden"></div><script src="https://cdn.jsdelivr.net/npm/@docsearch/js@4"></script><script type="text/javascript" src="/scripts/docsearch.js"></script></header><main class="min-h-screen pb-24 pt-32"><div><div class="px-6 mx-auto max-w-2xl"><div class="flex gap-3 mb-8"><div class="bg-black rounded-full border border-neutral-800 p-2"><a href="/posts" class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.7842 18.9812C16.9566 19.2294 16.9373 19.5732 16.7207 19.8005C16.473 20.0602 16.0614 20.0694 15.8016 19.822L8.27883 12.6521C7.9304 12.3197 7.90845 11.7773 8.21339 11.4187L8.27883 11.3494L15.8016 4.17945L15.9051 4.09839C16.1614 3.93796 16.5039 3.97459 16.7207 4.20191C16.9369 4.42919 16.9564 4.77224 16.7842 5.02027L16.6982 5.12086L9.4802 12.0007L16.6982 18.8816L16.7842 18.9812Z" fill="currentColor"></path></svg></a></div></div></div><div class="max-w-2xl mx-auto px-6"><div class="my-5 text-center"><time class="font-regular text-gray-500 text-sm">2022년 10월 20일</time></div><h1 class="text-3xl font-bold mb-4 text-center">SwiftUI 소개</h1><p class="text-base leading-relaxed text-center">선언형 UI로 생산성을 높여주는 SwiftUI에 대한 설명입니다.</p></div><div class="max-w-4xl mx-auto p-6"><figure class="rounded-xl overflow-hidden"><img src="/thumbnail/what-is-swiftui.svg" class="p-0 w-full h-full object-cover"/></figure></div><div class="markdown-content mx-auto max-w-2xl px-6 text-left"><iframe src="https://www.youtube.com/embed/psL_5RIBqnY?start=7603" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe><p><strong>본 영상은 WWDC 19이며 SwiftUI 소개되는 부분에서 시작이됩니다.</strong></p><p>2019년 애플의 WWDC에서 처음 소개된 SwiftUI 는 모든 애플 운영체제용 앱을 개발하는데 있어서 완전히 새로운 방법을 제공합니다.</p><p>SwiftUI의 기본적인 목적은 앱 개발을 더 쉽고 폭발적인 생산성을 내면서 동시에 소프트웨어를 개발할 때 일반적으로 발생하는 버그들을 줄이는 것입니다. <br/> 또한 개발 과정에서도 앱의 라이브 프리뷰 기능을 이용하여 SwiftUI 프로젝트를 실시간으로 테스트할 수 있게 합니다. <br/></p><img width="100%" src="https://user-images.githubusercontent.com/68891494/229286766-44425ba2-bc64-4955-b106-99d99904313f.png"></img><p>위 이미지는 SwiftUI Project를 생성했을 때의 모습입니다. <br/><br/></p><h2>SwiftUI의 선언적 구문</h2><pre><code class="language-swift"><span class="token keyword">import</span> SwiftUI
+
+<span class="token keyword">struct</span> ContentView: View {
+    <span class="token keyword">var</span> body: some View {
+        VStack {
+            Text(<span class="token string">"Hello, world!"</span>)
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                .foregroundColor(.white)
+        }
+        .padding()
+        .background(.black)
+    }
+}
+</code></pre><p>UIKit과 인터페이스 빌더를 User Interface Layout을 설계하고 필요한 동작을 구현하는 것과는 완전히 다른 방법인 선언적 구문(declairactive syntax)이 SwiftUI에 도입되었습니다. <br/> 이 과정에서 기본적으로 레이아웃에 포함될 컴포넌트들을 선언하고, 그것들이 포함될 레이아웃 메니지 종류 (VStack, HStack, Form, List 등)를 명시하고, 속성을 설정하기 위해 수정자(modifier)를 사용합니다. <br/> 이렇게 선언하고 난 후 레이아웃의 위치와 constraint그리고 렌더링 방법에 대한 모든 복잡한 세부 사항은 SwiftUI가 자동으로 처리합니다. <br/> SwiftUI 선언은 계층적으로 구조화 되어 있습니다. 따라서 복잡한 뷰를 보다 쉽게 생성할 수 있습니다. <br/> <br/></p><h2>SwiftUI는 데이터 주도적</h2><p>SwiftUI 이전에는 앱 내에 있는 데이터의 현재 값을 검사하려면 그에 대한 코드를 앱에 포함 해야했습니다. <br/> 시간에 지남에 따라 데이터가 변한다면 사용자 인터페이스가 데이터의 최신 상태를 항상 반영하도록 하는 코드를 작성하거나, 데이터가 변경되었는지 주기적으로 검사하는 코드를 작성하는 것, 그리고 갱신 메뉴를 제공 해야했습니다. <br/> 이러한 데이터 소스를 앱의 여러 영역에서 사용할 경우 소스 코드의 복잡도가 증가합니다. <br/></p><blockquote><p><strong>SwiftUI는 앱의 데이터 모델과 사용자 인터페이스 컴포넌트, 그리고 기능을 제공하는 로직을 binding하는 여러방법으로 복잡도를 해결하게 됩니다.</strong> <br/></p></blockquote><p>데이터 주도로 구현하면 데이터 모델은 앱의 다른 부분에서 subscibe 할 수 데이터 변수는 publish 하게 됩니다. (publisher – subsciber) <br/> 이러한 방법을 통해 데이터가 변경되었다는 사실을 모든 구독자에게 자동으로 알릴 수 있습니다.<br/> 만약 사용자 인터페이스 컴포넌트와 데이터 모델 간에 바인딩이 된다면, <strong>추가적인 코드를 작성하지 않아도 모든 데이터의 변경 사항을 SwiftUI가 사용자 인터페이스에 자동으로 반영할 것</strong>입니다. <br/><br/></p><h2>UIKit VS SwiftUI</h2><img width="100%" src = "https://res.cloudinary.com/practicaldev/image/fetch/s--Ry1DiaP7--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/uploads/articles/85fmihrdl249k9cuid1i.png"></img><p><strong>UIKit</strong></p><pre><code class="language-swift"><span class="token keyword">import</span> UIKit
+
+<span class="token keyword">final</span> <span class="token keyword">class</span> ViewController: UIViewController {
+
+    <span class="token keyword">private</span> <span class="token keyword">lazy</span> <span class="token keyword">var</span> button: UIButton = {
+        <span class="token keyword">let</span> button = UIButton()
+        button.setTitle(<span class="token string">"Hello UIKit"</span>, <span class="token keyword">for</span>: .normal)
+        button.addTarget(<span class="token keyword">self</span>, action: #selector(helloUIKitButtonAction), <span class="token keyword">for</span>: .touchUpInside)
+        <span class="token keyword">return</span> button
+    }()
+
+    <span class="token keyword">override</span> <span class="token keyword">func</span> viewDidLoad() {
+        <span class="token keyword">super</span>.viewDidLoad()
+
+        view.backgroundColor = .black
+
+        view.addSubview(button)
+
+        NSLayoutConstraint.activate([
+            button.centerXAnchor.constraint(equalTo: <span class="token keyword">self</span>.view.centerXAnchor),
+            button.centerYAnchor.constraint(equalTo: <span class="token keyword">self</span>.view.centerYAnchor)
+        ])
+    }
+
+    @objc <span class="token keyword">private</span> <span class="token keyword">func</span> helloUIKitButtonAction() {
+        printContent(<span class="token string">"Hello UIKit!"</span>)
+    }
+}
+</code></pre><p><strong>SwiftUI</strong></p><pre><code class="language-swift"><span class="token keyword">import</span> SwiftUI
+
+<span class="token keyword">struct</span> ContentView: View {
+    <span class="token keyword">var</span> body: some View {
+        VStack {
+            Button(<span class="token string">"Hello SwiftUI"</span>) {
+                print(<span class="token string">"Hello SwiftUI!"</span>)
+            }
+        }
+        .background(.black)
+    }
+}
+</code></pre><p>같은 동작을 하는 뷰를 만들어 봤습니다. <br/></p><p>차이점이 보이시나요? UIKit(명령형)과 SwiftUI(선언형)을 비교해볼 때 <br/></p><p>UIKit에서는 Property를 선언 view에 추가하고, Layout에 제약사항을 준 후, action을 할 함수를 만들어서 button에 addTarget 해줍니다. <br/></p><p>하지만 SwiftUI에서는 그래로 원하는 위치에 Button을 추가하고 action을 추가하면 끝납니다. <br/></p><p>생산성 부분에서 어마어마하게 차이가 난다는 걸 볼 수 있습니다. <br/><br/></p><h2>UIKit과 SwiftUI를 함께 사용하는 방법</h2><p>사실 UIView와 SwiftUI를 함께 사용할 수 있는 방법은 다양하게 존재합니다. <br/></p><p>SwiftUI는 빠르고 효율적인 앱 개발 환경을 제공할 뿐만 아니라 코드를 크게 변경하지 않아도 다양한 애플 플랫폼에서 동일한 앱을 사용할 수 있게 합니다.<br/></p><p>하지만 지도 또는 웹 뷰를 통합해야 하는 특정 기능은 여전히 UIKit을 사용해야 하고, 매우 복잡한 UI 레이아웃을 설계하는 경우에 SwiftUI 레이아웃 컨테이너 뷰 사용이 만족스럽지 않을 수 있습니다. <br/></p><p>이런 상황에서는 인터페이스 빌더를 사용을 하는 방식으로 해결할 수도 있습니다. <br/><br/></p><h2>지금 SwiftUI는 어떨까?</h2><p>현재까지는 시기상조라는 말도 있고, 회사에서 도입 할 것이라는 말이 있습니다. <br/> 이 부분은 사람마다 의견이 다르기 때문에 정확한 대답은 어렵지만, 개인적으로 저는 자신이 처한 상황에서 직접 고려하여 결정하는 것이 좋다고 생각합니다. <br/></p><p>SwiftUI 최소 버전은 iOS 기준 13.0이지만, 제대로 사용하려면 15.0 이상이여야 하기 때문에, 이러한 부분은 좀 많이 아쉽긴 합니다. <br/></p><p>그리고 현재 SwiftUI는 버그도 있기도 하고, 아직 사용하기에는 불완전하다는 말에 동의는 합니다. <br/> 하지만 엄청난 생산성을 갖는다는것, 그리고 Apple이 추구하는 방향성의 UI Framework라는 것은 부정할 수 없기 때문에, iOS 개발자로 살면 언젠가는 사용해야하기 때문에 미리 공부해 보는 것도 좋다고 생각을 합니다.</p></div><div class="max-w-2xl mx-auto px-6"><div class="flex flex-col gap-4 px-4 mt-11 mb-4 max-w-3xl mx-auto md:flex-row md:px-0 md:gap-8"><div class="min-w-0 flex-1"><a href="/posts/swiftui-need-mvvm" class="flex cursor-pointer items-center w-full h-full"><div class="p-4 w-full h-full rounded-lg bg-black border border-neutral-800 hover:border-neutral-600 hover:shadow-sm transition-all duration-200 cursor-pointer"><p class="text-sm text-gray-500 mb-2">Preview Post</p><h3 class="text-2xl font-semibold text-neutral-300 hover:text-white transition-colors">SwiftUI에 MVVM이 필요할까요?</h3></div></a></div><div class="min-w-0 flex-1"><a href="/posts/yackety-yak-ios-4" class="flex cursor-pointer items-center w-full h-full"><div class="p-4 w-full h-full rounded-lg bg-black border border-neutral-800 hover:border-neutral-600 hover:shadow-sm transition-all duration-200 cursor-pointer text-right"><p class="text-sm text-gray-500 mb-2 text-right">Next Post</p><h3 class="text-2xl font-semibold text-neutral-300 hover:text-white transition-colors">와글와글 제4회 발표 회고록</h3></div></a></div></div></div></div><script>document.addEventListener('DOMContentLoaded', function() {
+    var viewport = document.querySelector('.screen-carousel-viewport');
+    var strip = document.getElementById('screen-carousel-strip');
+    var dots = document.querySelectorAll('.screen-carousel-dot');
+    if (viewport &amp;&amp; strip &amp;&amp; dots.length) {
+        function goTo(i) {
+            var w = viewport.offsetWidth;
+            viewport.scrollLeft = i * w;
+            dots.forEach(function(d, j) {
+                d.classList.toggle('is-active', j === i);
+            });
+        }
+        dots.forEach(function(dot, i) {
+            dot.addEventListener('click', function() { goTo(i); });
+        });
+        viewport.addEventListener('scroll', function() {
+            var i = Math.round(viewport.scrollLeft / viewport.offsetWidth);
+            i = Math.max(0, Math.min(i, dots.length - 1));
+            dots.forEach(function(d, j) { d.classList.toggle('is-active', j === i); });
+        });
+    }
+    var codeBlocks = document.querySelectorAll('.markdown-content pre');
+    codeBlocks.forEach(function(pre) {
+        var copyButton = document.createElement('button');
+        copyButton.textContent = 'Copy';
+        copyButton.className = 'copy-code-button';
+        copyButton.addEventListener('click', function() {
+            var codeElement = pre.querySelector('code');
+            var codeText = codeElement ? codeElement.textContent : pre.textContent;
+            navigator.clipboard.writeText(codeText).then(function() {
+                copyButton.textContent = 'Copied!';
+                setTimeout(function() { copyButton.textContent = 'Copy'; }, 1500);
+            }).catch(function() {
+                var textArea = document.createElement('textarea');
+                textArea.value = codeText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                copyButton.textContent = 'Copied!';
+                setTimeout(function() { copyButton.textContent = 'Copy'; }, 1500);
+            });
+        });
+        pre.appendChild(copyButton);
+    });
+});</script></main><footer class="left-0 right-0 flex justify-center items-center px-6 my-10 max-w-4xl mx-auto"><div class="flex flex-row justify-center items-center px-4 py-2 rounded-full border border-neutral-800 bg-neutral-900/90 backdrop-blur-sm"><p class="text-neutral-400 text-sm">© 2025 jihoon.me. All rights reserved.</p></div></footer></body></html>

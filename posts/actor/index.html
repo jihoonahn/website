@@ -1,0 +1,153 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"/><meta property="og:site_name" content="Actor 란"/><link rel="canonical" href="https://jihoon.me"/><meta name="twitter:url" content="https://jihoon.me"/><meta property="og:url" content="https://jihoon.me"/><title>Actor 란</title><meta name="twitter:title" content="Actor 란"/><meta property="og:title" content="Actor 란"/><meta name="description" content="---
+title: Actor 란
+date: 2026-02-07 21:30
+tags: Swift, Concurrency, Actor
+image: thumbnail/actor.svg
+description: Actor에 대해서 알아보겠습니다.
+---
+
+### Actor 란"/><meta name="twitter:description" content="---
+title: Actor 란
+date: 2026-02-07 21:30
+tags: Swift, Concurrency, Actor
+image: thumbnail/actor.svg
+description: Actor에 대해서 알아보겠습니다.
+---
+
+### Actor 란"/><meta property="og:description" content="---
+title: Actor 란
+date: 2026-02-07 21:30
+tags: Swift, Concurrency, Actor
+image: thumbnail/actor.svg
+description: Actor에 대해서 알아보겠습니다.
+---
+
+### Actor 란"/><meta name="twitter:card" content="summary_large_image"/><link rel="canonical" href="https://jihoon.me"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@4"/><link rel="stylesheet" href="/global.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico" type="/image/png"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to Actor 란"/></head><body><header class="fixed top-8 left-0 right-0 flex justify-between items-center px-6 max-w-2xl mx-auto z-99"><nav class="flex space-x-3 header-container"><div class="tooltip-container relative group" style=".tooltip-container:hover .tooltip { opacity: 1; visibility: visible; }"><a href="/" class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18.3966 9.54817L12.3966 5.42317C12.1577 5.25894 11.8423 5.25894 11.6034 5.42317L5.60343 9.54817L4.86694 8.47692L10.8669 4.35192C11.5494 3.88269 12.4506 3.88269 13.1331 4.35192L19.1331 8.47692C19.6758 8.85003 20 9.46641 20 10.125V17.0729C20 18.7298 18.6569 20.0729 17 20.0729H14.5C13.9477 20.0729 13.5 19.6252 13.5 19.0729V16.0729C13.5 15.5207 13.0523 15.0729 12.5 15.0729H11.5C10.9477 15.0729 10.5 15.5207 10.5 16.0729V19.0729C10.5 19.6252 10.0523 20.0729 9.5 20.0729H7C5.34315 20.0729 4 18.7298 4 17.0729V10.125C4 9.46641 4.32423 8.85003 4.86694 8.47692L5.60343 9.54817C5.41348 9.67876 5.3 9.89449 5.3 10.125V17.0729C5.3 18.0118 6.06112 18.7729 7 18.7729H9.2V16.0729C9.2 14.8027 10.2297 13.7729 11.5 13.7729H12.5C13.7703 13.7729 14.8 14.8027 14.8 16.0729V18.7729H17C17.9389 18.7729 18.7 18.0118 18.7 17.0729V10.125C18.7 9.89449 18.5865 9.67876 18.3966 9.54817Z" fill="currentColor"></path></svg></a><div class="tooltip absolute z-50 px-3 py-2 text-sm text-neutral-100 bg-neutral-900 border border-neutral-700 rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 pointer-events-none whitespace-nowrap top-full left-1/2 transform -translate-x-1/2 mt-3" style="transition-delay: 200ms;">Index</div></div><div class="tooltip-container relative group" style=".tooltip-container:hover .tooltip { opacity: 1; visibility: visible; }"><a href="/posts" class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.2929 19.7071C12.1054 19.8946 11.851 20 11.5858 20H5.9994C4.89483 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H18C19.1046 4 20 4.89543 20 6V11.5858C20 11.851 19.8946 12.1054 19.7071 12.2929L12.2929 19.7071ZM18.45 11.35C18.5881 11.35 18.7 11.2381 18.7 11.1V6C18.7 5.6134 18.3866 5.3 18 5.3H6C5.6134 5.3 5.3 5.6134 5.3 6V18C5.3 18.3871 5.61331 18.7 5.9994 18.7H11.1C11.2381 18.7 11.35 18.5881 11.35 18.45V13.9994C11.35 12.5356 12.5367 11.35 14 11.35H18.45ZM13.0768 17.0847C12.9193 17.2422 12.65 17.1307 12.65 16.908V13.9994C12.65 13.2541 13.2542 12.65 14 12.65H16.908C17.1307 12.65 17.2422 12.9193 17.0847 13.0768L13.0768 17.0847Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path></svg></a><div class="tooltip absolute z-50 px-3 py-2 text-sm text-neutral-100 bg-neutral-900 border border-neutral-700 rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 pointer-events-none whitespace-nowrap top-full left-1/2 transform -translate-x-1/2 mt-3" style="transition-delay: 200ms;">Posts</div></div><div class="tooltip-container relative group" style=".tooltip-container:hover .tooltip { opacity: 1; visibility: visible; }"><a href="/about" class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.2513 12C17.7695 12 19.0483 13.2762 18.4673 14.6788C18.1156 15.5281 17.5999 16.2997 16.9499 16.9497C16.2999 17.5998 15.5282 18.1154 14.679 18.4672C13.8297 18.8189 12.9194 19 12.0002 19C11.0809 19 10.1707 18.8189 9.32139 18.4672C8.47212 18.1154 7.70044 17.5998 7.05043 16.9497C6.40042 16.2997 5.8848 15.5281 5.53302 14.6788C4.95205 13.2762 6.23089 12 7.74905 12L16.2513 12ZM16.0307 16.0305C16.56 15.5012 16.9798 14.8729 17.2663 14.1813C17.3167 14.0597 17.3152 13.9764 17.3038 13.9178C17.291 13.8525 17.255 13.7678 17.1723 13.6742C16.9971 13.476 16.6608 13.3 16.2513 13.3H7.74905C7.33956 13.3 7.00324 13.476 6.82801 13.6742C6.74531 13.7678 6.70931 13.8525 6.69656 13.9178C6.68511 13.9764 6.6837 14.0597 6.73406 14.1813C7.02052 14.8729 7.44038 15.5012 7.96967 16.0305C8.49896 16.5598 9.12733 16.9797 9.81888 17.2661C10.5104 17.5526 11.2516 17.7 12.0002 17.7C12.7487 17.7 13.4899 17.5526 14.1815 17.2661C14.873 16.9797 15.5014 16.5598 16.0307 16.0305Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path><path d="M10.6909 10.7C9.69009 10.2138 9.00018 9.18746 9.00018 8C9.00018 6.34315 10.3433 5 12.0002 5C13.657 5 15.0002 6.34315 15.0002 8C15.0002 9.18746 14.3103 10.2138 13.3094 10.7C12.9138 10.8922 12.4696 11 12.0002 11C11.5308 11 11.0866 10.8922 10.6909 10.7ZM12.0002 9.7C12.9391 9.7 13.7002 8.93888 13.7002 8C13.7002 7.06112 12.9391 6.3 12.0002 6.3C11.0613 6.3 10.3002 7.06112 10.3002 8C10.3002 8.93888 11.0613 9.7 12.0002 9.7Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path></svg></a><div class="tooltip absolute z-50 px-3 py-2 text-sm text-neutral-100 bg-neutral-900 border border-neutral-700 rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 pointer-events-none whitespace-nowrap top-full left-1/2 transform -translate-x-1/2 mt-3" style="transition-delay: 200ms;">About</div></div></nav><div class="header-container"><button class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12" onclick="document.querySelector('#docsearch button').click()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.0155 13.9887C13.0105 13.9925 13.0055 13.9962 13.0005 14C12.1647 14.6279 11.1258 15 10 15C7.23858 15 5 12.7614 5 10C5 7.23858 7.23858 5 10 5C12.7614 5 15 7.23858 15 10C15 11.1326 14.6234 12.1772 13.9887 13.0155L17.3795 16.4063C17.4563 16.483 17.5458 16.5834 17.6325 16.6971L17.6426 16.7105C17.9182 17.076 18.1597 17.5725 17.8661 17.8661C17.5725 18.1597 17.076 17.9182 16.7105 17.6426L16.6971 17.6325C16.5834 17.5458 16.483 17.4563 16.4063 17.3795L13.0155 13.9887ZM10 13.7C7.95655 13.7 6.3 12.0435 6.3 10C6.3 7.95655 7.95655 6.3 10 6.3C12.0435 6.3 13.7 7.95655 13.7 10C13.7 11.2095 13.121 12.2834 12.2196 12.9607C11.6013 13.4252 10.8346 13.7 10 13.7Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path></svg></button></div><div id="docsearch" class="hidden"></div><script src="https://cdn.jsdelivr.net/npm/@docsearch/js@4"></script><script type="text/javascript" src="/scripts/docsearch.js"></script></header><main class="min-h-screen pb-24 pt-32"><div><div class="px-6 mx-auto max-w-2xl"><div class="flex gap-3 mb-8"><div class="bg-black rounded-full border border-neutral-800 p-2"><a href="/posts" class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.7842 18.9812C16.9566 19.2294 16.9373 19.5732 16.7207 19.8005C16.473 20.0602 16.0614 20.0694 15.8016 19.822L8.27883 12.6521C7.9304 12.3197 7.90845 11.7773 8.21339 11.4187L8.27883 11.3494L15.8016 4.17945L15.9051 4.09839C16.1614 3.93796 16.5039 3.97459 16.7207 4.20191C16.9369 4.42919 16.9564 4.77224 16.7842 5.02027L16.6982 5.12086L9.4802 12.0007L16.6982 18.8816L16.7842 18.9812Z" fill="currentColor"></path></svg></a></div></div></div><div class="max-w-2xl mx-auto px-6"><div class="my-5 text-center"><time class="font-regular text-gray-500 text-sm">2026년 2월 7일</time></div><h1 class="text-3xl font-bold mb-4 text-center">Actor 란</h1><p class="text-base leading-relaxed text-center">Actor에 대해서 알아보겠습니다.</p></div><div class="max-w-4xl mx-auto p-6"><figure class="rounded-xl overflow-hidden"><img src="/thumbnail/actor.svg" class="p-0 w-full h-full object-cover"/></figure></div><div class="markdown-content mx-auto max-w-2xl px-6 text-left"><h3>Actor 란</h3><p><code>Actor</code>는 Swift Concurrency에서 Data Race를 컴파일 타임에 방지하기 위해 도입된 reference 타입입니다.</p><p>Actor가 나오기 전엔, class는 여러 스레드에서 동시에 접근할 수 있기 때문에, 개발자가 직접 <code>DispatchQueue</code>, <code>NSLock</code>, <code>Semaphore</code> 등을 통해서 동기화를 보장해야했지만, 그로 인해 유지보수 비용이 매우 높아졌다.</p><p>하지만 Actor는 이를 언어 차원에서 해결해준다.</p><h3>Actor의 핵심 보장</h3><ul><li>한 시점에 단 하나의 Task만 actor의 mutable state에 접근 가능</li><li>동기화 코드를 직접 작성하지 않아도 됨</li><li>잘못된 동시 접근은 컴파일 에러로 차단</li></ul><p>즉 Actor는 Thread-safe한 class를 기본값으로 제공한다고 하면 이해하기 쉽다.</p><h3>Actor의 기본 구조</h3><pre><code class="language-swift">actor Counter {
+    <span class="token keyword">var</span> value: Int = <span class="token number">0</span>
+
+
+    <span class="token keyword">func</span> increment() {
+        value += <span class="token number">1</span>
+    }
+
+
+    <span class="token keyword">func</span> getValue() -&gt; Int {
+        value
+    }
+}
+</code></pre><p>사용법</p><pre><code>let counter = Counter()
+
+
+Task {
+    await counter.increment()
+    let value = await counter.getValue()
+    print(value)
+}
+</code></pre><p><code>actor</code> 내부의 <code>var</code>은 자동으로 보호되며 외부에서 접근시 반드시 <code>await</code>가 필요하고, 내부에서는 <code>await</code> 없이 자기 자신의 state 접근 가능하다.</p><h3>Actor Isolation</h3><p>Actor에서는 Isolation이 존재한다.</p><ul><li>actor의 모든 mutable state는 actor의 executor에 격리되게 된다.</li><li>외부에서는 actor 내부 상태에 직접 접근이 불가하다.</li></ul><pre><code class="language-swift">actor UserStore {
+    <span class="token keyword">var</span> users: [String] = []
+}
+
+
+<span class="token keyword">let</span> store = UserStore()
+<span class="token comment">// ❌ 컴파일 에러</span>
+store.users.append(<span class="token string">"Jihoon"</span>)
+</code></pre><p>이 상황에서 아래 처럼 해야한다.</p><pre><code class="language-swift">actor UserStore {
+    <span class="token keyword">private</span> <span class="token keyword">var</span> users: [String] = []
+
+
+    <span class="token keyword">func</span> add(_ user: String) {
+        users.append(user)
+    }
+}
+
+
+await store.add(<span class="token string">"Jihoon"</span>)
+</code></pre><p>이 구조 덕분에 데이터 레이스는 구조적으로 불가능합니다.</p><h3>Actor vs Class + Lock</h3><p>기존에는 Class 와 NSLock을 사용해서</p><pre><code class="language-swift"><span class="token keyword">final</span> <span class="token keyword">class</span> SafeCounter {
+    <span class="token keyword">private</span> <span class="token keyword">var</span> value = <span class="token number">0</span>
+    <span class="token keyword">private</span> <span class="token keyword">let</span> lock = NSLock()
+
+    <span class="token keyword">func</span> increment() {
+        lock.lock()
+        value += <span class="token number">1</span>
+        lock.unlock()
+    }
+}
+</code></pre><p>문제점</p><ul><li>lock 누락 가능성</li><li>데드락 위험</li><li>가독성 저하</li><li>테스트 난이도 상승</li></ul><p>Actor 방식을 사용하면</p><pre><code class="language-swift">actor SafeCounter {
+    <span class="token keyword">private</span> <span class="token keyword">var</span> value = <span class="token number">0</span>
+
+    <span class="token keyword">func</span> increment() {
+        value += <span class="token number">1</span>
+    }
+}
+</code></pre><p>안정성과 가독성을 올리고, 컴파일러를 보장합니다.</p><h3>Non-isolated &amp; Read-only 최적화</h3><p>Actor의 모든 메ㅅ드가 항상 <code>await</code> 를 요구하는건 아니다.</p><pre><code class="language-swift">actor Config {
+    <span class="token keyword">let</span> apiVersion = <span class="token string">"v1"</span>
+
+
+    nonisolated <span class="token keyword">func</span> version() -&gt; String {
+        apiVersion
+    }
+}
+</code></pre><ul><li><code>let</code> 상수는 동기화가 불필요</li><li><code>nonisolated</code>는 actor executor를 거치지 않음</li><li>성능 최적화에 매우 중요</li><li>mutable state 접근은 불가</li></ul><h3>Reentrancy (재진입성)</h3><p>Actor는 reentrant하다.</p><pre><code class="language-swift">actor BankAccount {
+    <span class="token keyword">var</span> balance: Int = <span class="token number">100</span>
+
+    <span class="token keyword">func</span> withdraw(_ amount: Int) async {
+        <span class="token keyword">if</span> balance &gt;= amount {
+            await Task.yield()
+            balance -= amount
+        }
+    }
+}
+</code></pre><p>문제는, <code>await</code> 중에 다른 task가 끼어들 수 있고, 논리적 경쟁 상태 (logical race) 발생 가능합니다. 이를 해결하려면, 중요한 연산은 <code>await</code> 없이 한 번에 처리하며, State snapshot 사용하면 된다.</p><pre><code class="language-swift"><span class="token keyword">func</span> withdraw(_ amount: Int) {
+    <span class="token keyword">guard</span> balance &gt;= amount <span class="token keyword">else</span> { <span class="token keyword">return</span> }
+    balance -= amount
+}
+</code></pre><h3>Global Actor (MainActor)</h3><pre><code class="language-swift">@MainActor
+<span class="token keyword">class</span> ViewModel {
+    <span class="token keyword">var</span> title = <span class="token string">""</span>
+}
+</code></pre><p>특정 executor(주로 Main Thread)에 격리 시킬수 있습니다.</p><h3>성능</h3><p>Actor같은 경우</p><ul><li>lock 기반 보다 약간 오버헤드가 존재</li><li>context switching 비용</li><li>executor enqueue/dequeue</li></ul><p>하지만</p><ul><li>대부분의 앱에서 체감 불가 수준</li><li>lock 사용에 대한 버그 비용보다는 오버헤드가 감수 할 정도</li></ul><p>Actor를 사용하면 안되는 경우</p><ul><li>초당 수십만번 호출 되는 hot path 경우</li><li>매우 짧은 atomic 연산</li></ul><p>대신</p><p><code>ManagedAtomic</code> (Swift Atomics)와 value type + task-local 로 처리 하면 됩니다.</p><h3>언제 사용해야되나</h3><ul><li>공유 상태 관리</li><li>cache, store, repository</li><li>Analytics, Logging</li><li>ViewModel, Domain Service</li></ul><h3>피해야되는 경우</h3><ul><li>수치 연산 중심 코드</li><li>tight looop</li><li>단일 스레드 보장 환경</li></ul></div><div class="max-w-2xl mx-auto px-6"><div class="flex flex-col gap-4 px-4 mt-11 mb-4 max-w-3xl mx-auto md:flex-row md:px-0 md:gap-8"><div class="min-w-0 flex-1"><a href="/posts/swift-concurrency" class="flex cursor-pointer items-center w-full h-full"><div class="p-4 w-full h-full rounded-lg bg-black border border-neutral-800 hover:border-neutral-600 hover:shadow-sm transition-all duration-200 cursor-pointer"><p class="text-sm text-gray-500 mb-2">Preview Post</p><h3 class="text-2xl font-semibold text-neutral-300 hover:text-white transition-colors">Swift Concurrency</h3></div></a></div></div></div></div><script>document.addEventListener('DOMContentLoaded', function() {
+    var viewport = document.querySelector('.screen-carousel-viewport');
+    var strip = document.getElementById('screen-carousel-strip');
+    var dots = document.querySelectorAll('.screen-carousel-dot');
+    if (viewport &amp;&amp; strip &amp;&amp; dots.length) {
+        function goTo(i) {
+            var w = viewport.offsetWidth;
+            viewport.scrollLeft = i * w;
+            dots.forEach(function(d, j) {
+                d.classList.toggle('is-active', j === i);
+            });
+        }
+        dots.forEach(function(dot, i) {
+            dot.addEventListener('click', function() { goTo(i); });
+        });
+        viewport.addEventListener('scroll', function() {
+            var i = Math.round(viewport.scrollLeft / viewport.offsetWidth);
+            i = Math.max(0, Math.min(i, dots.length - 1));
+            dots.forEach(function(d, j) { d.classList.toggle('is-active', j === i); });
+        });
+    }
+    var codeBlocks = document.querySelectorAll('.markdown-content pre');
+    codeBlocks.forEach(function(pre) {
+        var copyButton = document.createElement('button');
+        copyButton.textContent = 'Copy';
+        copyButton.className = 'copy-code-button';
+        copyButton.addEventListener('click', function() {
+            var codeElement = pre.querySelector('code');
+            var codeText = codeElement ? codeElement.textContent : pre.textContent;
+            navigator.clipboard.writeText(codeText).then(function() {
+                copyButton.textContent = 'Copied!';
+                setTimeout(function() { copyButton.textContent = 'Copy'; }, 1500);
+            }).catch(function() {
+                var textArea = document.createElement('textarea');
+                textArea.value = codeText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                copyButton.textContent = 'Copied!';
+                setTimeout(function() { copyButton.textContent = 'Copy'; }, 1500);
+            });
+        });
+        pre.appendChild(copyButton);
+    });
+});</script></main><footer class="left-0 right-0 flex justify-center items-center px-6 my-10 max-w-4xl mx-auto"><div class="flex flex-row justify-center items-center px-4 py-2 rounded-full border border-neutral-800 bg-neutral-900/90 backdrop-blur-sm"><p class="text-neutral-400 text-sm">© 2025 jihoon.me. All rights reserved.</p></div></footer></body></html>

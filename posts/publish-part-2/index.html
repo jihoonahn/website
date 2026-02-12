@@ -1,0 +1,583 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"/><meta property="og:site_name" content="Publish 사용하기 part 2"/><link rel="canonical" href="https://jihoon.me"/><meta name="twitter:url" content="https://jihoon.me"/><meta property="og:url" content="https://jihoon.me"/><title>Publish 사용하기 part 2</title><meta name="twitter:title" content="Publish 사용하기 part 2"/><meta property="og:title" content="Publish 사용하기 part 2"/><meta name="description" content="---
+title: Publish 사용하기 part 2
+date: 2023-10-26 14:48
+tags: Swift, Publish, Web, Theory
+image: thumbnail/publish-part-2.svg
+description: Swift publish"/><meta name="twitter:description" content="---
+title: Publish 사용하기 part 2
+date: 2023-10-26 14:48
+tags: Swift, Publish, Web, Theory
+image: thumbnail/publish-part-2.svg
+description: Swift publish"/><meta property="og:description" content="---
+title: Publish 사용하기 part 2
+date: 2023-10-26 14:48
+tags: Swift, Publish, Web, Theory
+image: thumbnail/publish-part-2.svg
+description: Swift publish"/><meta name="twitter:card" content="summary_large_image"/><link rel="canonical" href="https://jihoon.me"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@4"/><link rel="stylesheet" href="/global.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico" type="/image/png"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to Publish 사용하기 part 2"/></head><body><header class="fixed top-8 left-0 right-0 flex justify-between items-center px-6 max-w-2xl mx-auto z-99"><nav class="flex space-x-3 header-container"><div class="tooltip-container relative group" style=".tooltip-container:hover .tooltip { opacity: 1; visibility: visible; }"><a href="/" class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18.3966 9.54817L12.3966 5.42317C12.1577 5.25894 11.8423 5.25894 11.6034 5.42317L5.60343 9.54817L4.86694 8.47692L10.8669 4.35192C11.5494 3.88269 12.4506 3.88269 13.1331 4.35192L19.1331 8.47692C19.6758 8.85003 20 9.46641 20 10.125V17.0729C20 18.7298 18.6569 20.0729 17 20.0729H14.5C13.9477 20.0729 13.5 19.6252 13.5 19.0729V16.0729C13.5 15.5207 13.0523 15.0729 12.5 15.0729H11.5C10.9477 15.0729 10.5 15.5207 10.5 16.0729V19.0729C10.5 19.6252 10.0523 20.0729 9.5 20.0729H7C5.34315 20.0729 4 18.7298 4 17.0729V10.125C4 9.46641 4.32423 8.85003 4.86694 8.47692L5.60343 9.54817C5.41348 9.67876 5.3 9.89449 5.3 10.125V17.0729C5.3 18.0118 6.06112 18.7729 7 18.7729H9.2V16.0729C9.2 14.8027 10.2297 13.7729 11.5 13.7729H12.5C13.7703 13.7729 14.8 14.8027 14.8 16.0729V18.7729H17C17.9389 18.7729 18.7 18.0118 18.7 17.0729V10.125C18.7 9.89449 18.5865 9.67876 18.3966 9.54817Z" fill="currentColor"></path></svg></a><div class="tooltip absolute z-50 px-3 py-2 text-sm text-neutral-100 bg-neutral-900 border border-neutral-700 rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 pointer-events-none whitespace-nowrap top-full left-1/2 transform -translate-x-1/2 mt-3" style="transition-delay: 200ms;">Index</div></div><div class="tooltip-container relative group" style=".tooltip-container:hover .tooltip { opacity: 1; visibility: visible; }"><a href="/posts" class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.2929 19.7071C12.1054 19.8946 11.851 20 11.5858 20H5.9994C4.89483 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H18C19.1046 4 20 4.89543 20 6V11.5858C20 11.851 19.8946 12.1054 19.7071 12.2929L12.2929 19.7071ZM18.45 11.35C18.5881 11.35 18.7 11.2381 18.7 11.1V6C18.7 5.6134 18.3866 5.3 18 5.3H6C5.6134 5.3 5.3 5.6134 5.3 6V18C5.3 18.3871 5.61331 18.7 5.9994 18.7H11.1C11.2381 18.7 11.35 18.5881 11.35 18.45V13.9994C11.35 12.5356 12.5367 11.35 14 11.35H18.45ZM13.0768 17.0847C12.9193 17.2422 12.65 17.1307 12.65 16.908V13.9994C12.65 13.2541 13.2542 12.65 14 12.65H16.908C17.1307 12.65 17.2422 12.9193 17.0847 13.0768L13.0768 17.0847Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path></svg></a><div class="tooltip absolute z-50 px-3 py-2 text-sm text-neutral-100 bg-neutral-900 border border-neutral-700 rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 pointer-events-none whitespace-nowrap top-full left-1/2 transform -translate-x-1/2 mt-3" style="transition-delay: 200ms;">Posts</div></div><div class="tooltip-container relative group" style=".tooltip-container:hover .tooltip { opacity: 1; visibility: visible; }"><a href="/about" class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.2513 12C17.7695 12 19.0483 13.2762 18.4673 14.6788C18.1156 15.5281 17.5999 16.2997 16.9499 16.9497C16.2999 17.5998 15.5282 18.1154 14.679 18.4672C13.8297 18.8189 12.9194 19 12.0002 19C11.0809 19 10.1707 18.8189 9.32139 18.4672C8.47212 18.1154 7.70044 17.5998 7.05043 16.9497C6.40042 16.2997 5.8848 15.5281 5.53302 14.6788C4.95205 13.2762 6.23089 12 7.74905 12L16.2513 12ZM16.0307 16.0305C16.56 15.5012 16.9798 14.8729 17.2663 14.1813C17.3167 14.0597 17.3152 13.9764 17.3038 13.9178C17.291 13.8525 17.255 13.7678 17.1723 13.6742C16.9971 13.476 16.6608 13.3 16.2513 13.3H7.74905C7.33956 13.3 7.00324 13.476 6.82801 13.6742C6.74531 13.7678 6.70931 13.8525 6.69656 13.9178C6.68511 13.9764 6.6837 14.0597 6.73406 14.1813C7.02052 14.8729 7.44038 15.5012 7.96967 16.0305C8.49896 16.5598 9.12733 16.9797 9.81888 17.2661C10.5104 17.5526 11.2516 17.7 12.0002 17.7C12.7487 17.7 13.4899 17.5526 14.1815 17.2661C14.873 16.9797 15.5014 16.5598 16.0307 16.0305Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path><path d="M10.6909 10.7C9.69009 10.2138 9.00018 9.18746 9.00018 8C9.00018 6.34315 10.3433 5 12.0002 5C13.657 5 15.0002 6.34315 15.0002 8C15.0002 9.18746 14.3103 10.2138 13.3094 10.7C12.9138 10.8922 12.4696 11 12.0002 11C11.5308 11 11.0866 10.8922 10.6909 10.7ZM12.0002 9.7C12.9391 9.7 13.7002 8.93888 13.7002 8C13.7002 7.06112 12.9391 6.3 12.0002 6.3C11.0613 6.3 10.3002 7.06112 10.3002 8C10.3002 8.93888 11.0613 9.7 12.0002 9.7Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path></svg></a><div class="tooltip absolute z-50 px-3 py-2 text-sm text-neutral-100 bg-neutral-900 border border-neutral-700 rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 pointer-events-none whitespace-nowrap top-full left-1/2 transform -translate-x-1/2 mt-3" style="transition-delay: 200ms;">About</div></div></nav><div class="header-container"><button class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12" onclick="document.querySelector('#docsearch button').click()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.0155 13.9887C13.0105 13.9925 13.0055 13.9962 13.0005 14C12.1647 14.6279 11.1258 15 10 15C7.23858 15 5 12.7614 5 10C5 7.23858 7.23858 5 10 5C12.7614 5 15 7.23858 15 10C15 11.1326 14.6234 12.1772 13.9887 13.0155L17.3795 16.4063C17.4563 16.483 17.5458 16.5834 17.6325 16.6971L17.6426 16.7105C17.9182 17.076 18.1597 17.5725 17.8661 17.8661C17.5725 18.1597 17.076 17.9182 16.7105 17.6426L16.6971 17.6325C16.5834 17.5458 16.483 17.4563 16.4063 17.3795L13.0155 13.9887ZM10 13.7C7.95655 13.7 6.3 12.0435 6.3 10C6.3 7.95655 7.95655 6.3 10 6.3C12.0435 6.3 13.7 7.95655 13.7 10C13.7 11.2095 13.121 12.2834 12.2196 12.9607C11.6013 13.4252 10.8346 13.7 10 13.7Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path></svg></button></div><div id="docsearch" class="hidden"></div><script src="https://cdn.jsdelivr.net/npm/@docsearch/js@4"></script><script type="text/javascript" src="/scripts/docsearch.js"></script></header><main class="min-h-screen pb-24 pt-32"><div><div class="px-6 mx-auto max-w-2xl"><div class="flex gap-3 mb-8"><div class="bg-black rounded-full border border-neutral-800 p-2"><a href="/posts" class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.7842 18.9812C16.9566 19.2294 16.9373 19.5732 16.7207 19.8005C16.473 20.0602 16.0614 20.0694 15.8016 19.822L8.27883 12.6521C7.9304 12.3197 7.90845 11.7773 8.21339 11.4187L8.27883 11.3494L15.8016 4.17945L15.9051 4.09839C16.1614 3.93796 16.5039 3.97459 16.7207 4.20191C16.9369 4.42919 16.9564 4.77224 16.7842 5.02027L16.6982 5.12086L9.4802 12.0007L16.6982 18.8816L16.7842 18.9812Z" fill="currentColor"></path></svg></a></div></div></div><div class="max-w-2xl mx-auto px-6"><div class="my-5 text-center"><time class="font-regular text-gray-500 text-sm">2023년 10월 26일</time></div><h1 class="text-3xl font-bold mb-4 text-center">Publish 사용하기 part 2</h1><p class="text-base leading-relaxed text-center">Swift publish 커스텀하기</p></div><div class="max-w-4xl mx-auto p-6"><figure class="rounded-xl overflow-hidden"><img src="/thumbnail/publish-part-2.svg" class="p-0 w-full h-full object-cover"/></figure></div><div class="markdown-content mx-auto max-w-2xl px-6 text-left"><h2>Publish 구조 작성하기</h2><pre><code class="language-swift"><span class="token keyword">struct</span> PublishHTMLFactory: HTMLFactory {
+    typealias Site = Example
+
+    <span class="token keyword">func</span> makeIndexHTML(<span class="token keyword">for</span> index: Publish.Index, context: Publish.PublishingContext&lt;Example&gt;) throws -&gt; Plot.HTML {
+        &lt;#code#&gt;
+    }
+
+    <span class="token keyword">func</span> makeSectionHTML(<span class="token keyword">for</span> section: Publish.Section&lt;Example&gt;, context: Publish.PublishingContext&lt;Example&gt;) throws -&gt; Plot.HTML {
+        &lt;#code#&gt;
+    }
+
+    <span class="token keyword">func</span> makeItemHTML(<span class="token keyword">for</span> item: Publish.Item&lt;Example&gt;, context: Publish.PublishingContext&lt;Example&gt;) throws -&gt; Plot.HTML {
+        &lt;#code#&gt;
+    }
+
+    <span class="token keyword">func</span> makePageHTML(<span class="token keyword">for</span> page: Publish.Page, context: Publish.PublishingContext&lt;Example&gt;) throws -&gt; Plot.HTML {
+        &lt;#code#&gt;
+    }
+
+    <span class="token keyword">func</span> makeTagListHTML(<span class="token keyword">for</span> page: Publish.TagListPage, context: Publish.PublishingContext&lt;Example&gt;) throws -&gt; Plot.HTML? {
+        &lt;#code#&gt;
+    }
+
+    <span class="token keyword">func</span> makeTagDetailsHTML(<span class="token keyword">for</span> page: Publish.TagDetailsPage, context: Publish.PublishingContext&lt;Example&gt;) throws -&gt; Plot.HTML? {
+        &lt;#code#&gt;
+    }
+}
+</code></pre><p>이전 포스트에서 만든 <code>PublishHTMLFactory</code> 부분 부터 보도록 하겠습니다.</p><p>Publish에서 HTML 로 구조를 작성하기 위해서, <a href="https://github.com/JohnSundell/Plot"><code>Plot</code></a>이라는 JohnSundell이 만든 라이브러리를 사용합니다.</p><p>기존에는</p><pre><code class="language-swift"><span class="token keyword">let</span> html = HTML(
+    .head(
+        .title(<span class="token string">"My website"</span>),
+        .stylesheet(<span class="token string">"styles.css"</span>)
+    ),
+    .body(
+        .div(
+            .h1(<span class="token string">"My website"</span>),
+            .p(<span class="token string">"Writing HTML in Swift is pretty great!"</span>)
+        )
+    )
+)
+</code></pre><p>이런 방식으로 작성했지만, Plot이 업데이트 되면서, Component 프로토콜을 사용해서 Component 요소들을 SwiftUI와 유사한 방식으로 작성할 수 있습니다.</p><pre><code class="language-swift"><span class="token keyword">struct</span> NewsArticle: Component {
+    <span class="token keyword">var</span> imagePath: String
+    <span class="token keyword">var</span> title: String
+    <span class="token keyword">var</span> description: String
+
+    <span class="token keyword">var</span> body: Component {
+        Article {
+            Image(url: imagePath, description: <span class="token string">"Header image"</span>)
+            H1(title)
+            Span(description).<span class="token keyword">class</span>(<span class="token string">"description"</span>)
+        }
+        .<span class="token keyword">class</span>(<span class="token string">"news"</span>)
+    }
+}
+</code></pre><p>이런 방식으로 말이죠</p><p>간단하게 알아 봤으니 한번 Publish에서 사용해보겠습니다. 먼저 가장 먼저 보일 부분인 Index 부분을 커스텀해보겠습니다.</p><pre><code class="language-swift"><span class="token keyword">func</span> makeIndexHTML(<span class="token keyword">for</span> index: Index, context: PublishingContext&lt;Example&gt;) throws -&gt; HTML {
+    &lt;#code#&gt;
+}
+</code></pre><p>먼저 <code>HTML</code>이라는 구조체를 <code>makeIndexHTML</code> 메서드에 추가해줍니다.</p><pre><code class="language-swift"><span class="token keyword">func</span> makeIndexHTML(<span class="token keyword">for</span> index: Index, context: PublishingContext&lt;Example&gt;) throws -&gt; HTML {
+    <span class="token comment">/// HTML 구조체 내에 node를 추가할 수 있는 형태</span>
+    HTML()
+
+    <span class="token comment">/// HTML 구조체에 들어갈 head 부분이랑 body 부분을 init에서 분리해주는 형태</span>
+    HTML(head: [], body: {})
+}
+</code></pre><p>위 두가지 HTML 에서 하나를 선택해주시면 됩니다. 저는 위 방식으로 진행하도록 하겠습니다.</p><p>먼저 사용할 언어를 선택해줍니다.</p><pre><code class="language-swift"><span class="token keyword">func</span> makeIndexHTML(<span class="token keyword">for</span> index: Index, context: PublishingContext&lt;Example&gt;) throws -&gt; HTML {
+    HTML(
+        .lang(context.site.language) <span class="token comment">/// &lt;html lang="$(main에서 설정한 언어)"&gt;</span>
+    )
+}
+</code></pre><p>Head에 필요한 정보들을 넣어줍니다. 저는 publish에서 제공해주는 head static 메서드를 통해서 구성해주도록 하겠습니다.</p><pre><code class="language-swift"><span class="token keyword">func</span> makeIndexHTML(<span class="token keyword">for</span> index: Index, context: PublishingContext&lt;Example&gt;) throws -&gt; HTML {
+    HTML(
+        .lang(context.site.language),
+        .head(<span class="token keyword">for</span>: index, on: context.site)
+    )
+}
+</code></pre><p>빌드를 돌리게 되면</p><img width=80% src="https://github.com/jihoonahn/blog/assets/68891494/af1b26e6-2045-4775-bcae-877912ca7b84"></img><p>이런식으로 Head 부분이 쉽게 구축이 된것을 확인 할 수 있습니다. publish에서 제공하는 head 메서드는 저희가 따로 node로 넣어줄 필요없이 가장 자주 사용되는것들로 구성해 줍니다.</p><p>하지만 웹에서는 /style.css에러가 발생합니다. 이 부분은</p><pre><code class="language-swift"><span class="token keyword">static</span> <span class="token keyword">func</span> head&lt;T: Website&gt;(
+    <span class="token keyword">for</span> location: Location,
+    on site: T,
+    titleSeparator: String = <span class="token string">" | "</span>,
+    stylesheetPaths: [Path] = [<span class="token string">"/styles.css"</span>],
+    rssFeedPath: Path? = .defaultForRSSFeed,
+    rssFeedTitle: String? = <span class="token keyword">nil</span>
+) -&gt; Node {}
+</code></pre><p>head static 메서드가 선언된 부분을 보면 알 수 있습니다. <br/></p><p><code>stylesheetPath</code>에 내용이 들어가지 않기 때문에, 자동으로 style.css 부분을 넣어줘서, 현재는 style.css 파일이 없기 때문에 에러가 발생하는 것입니다.</p><pre><code class="language-swift">.head(<span class="token keyword">for</span>: index, on: context.site, stylesheetPaths: [])
+</code></pre><p>그래서 아직 stylesheet 넣지 않을것이라면 이런식으로 빈 배열로 값을 넣어주면 에러가 발생하지 않습니다.</p><p>그 다음은 Body 입니다. <br/> Body 같은 경우도 node로 추가하는 방법도 있지만, 앞에서 말했던 Component를 사용해봅시다.</p><pre><code class="language-swift"><span class="token keyword">func</span> makeIndexHTML(<span class="token keyword">for</span> index: Index, context: PublishingContext&lt;Example&gt;) throws -&gt; HTML {
+    HTML(
+        .lang(context.site.language),
+        .head(<span class="token keyword">for</span>: index, on: context.site),
+        .body {
+            <span class="token comment">// Body Code</span>
+        }
+    )
+}
+</code></pre><h2>Component 사용법</h2><p>Component를 사용하기 위해서는 <code>Component</code> 라는 프로토콜을 상속 받아줍니다.</p><pre><code class="language-swift"><span class="token keyword">struct</span> ComponentName: Component
+</code></pre><p>이렇게 상속을 받아주면</p><pre><code class="language-swift"><span class="token keyword">struct</span> ComponentName: Component {
+    <span class="token keyword">var</span> body: Component {}
+}
+</code></pre><p>이런식으로 SwiftUI와 비슷한 스타일로 Component body 부분에서 기존에 사용하던 <code>Node</code> 또는 다른 <code>Component</code>를 이곳에 넣을 수 있습니다.</p><pre><code class="language-swift"><span class="token keyword">struct</span> ComponentName: Component {
+    <span class="token keyword">var</span> body: Component {
+        Div {
+            ...
+        }
+        .<span class="token keyword">class</span>(<span class="token string">"site-div"</span>)
+    }
+}
+</code></pre><p>이런식으로 Component를 제작할 수 있습니다.</p><p>현재 Plot에서 제공하고 있는 Component에서 사용할 수 있는 <a href="https://github.com/JohnSundell/Plot/blob/master/Sources/Plot/API/HTMLComponents.swift"><code>HTMLComponent</code></a> 입니다.</p><pre><code class="language-swift"><span class="token comment">/// A container component that's rendered using the `&lt;article&gt;` element.</span>
+<span class="token keyword">public</span> typealias Article = ElementComponent&lt;ElementDefinitions.Article&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;aside&gt;` element.</span>
+<span class="token keyword">public</span> typealias Aside = ElementComponent&lt;ElementDefinitions.Aside&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;button&gt;` element.</span>
+<span class="token keyword">public</span> typealias Button = ElementComponent&lt;ElementDefinitions.Button&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;div&gt;` element.</span>
+<span class="token keyword">public</span> typealias Details = ElementComponent&lt;ElementDefinitions.Details&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;div&gt;` element.</span>
+<span class="token keyword">public</span> typealias Div = ElementComponent&lt;ElementDefinitions.Div&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;fieldset&gt;` element.</span>
+<span class="token keyword">public</span> typealias FieldSet = ElementComponent&lt;ElementDefinitions.FieldSet&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;footer&gt;` element.</span>
+<span class="token keyword">public</span> typealias Footer = ElementComponent&lt;ElementDefinitions.Footer&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;h1&gt;` element.</span>
+<span class="token keyword">public</span> typealias H1 = ElementComponent&lt;ElementDefinitions.H1&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;h2&gt;` element.</span>
+<span class="token keyword">public</span> typealias H2 = ElementComponent&lt;ElementDefinitions.H2&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;h3&gt;` element.</span>
+<span class="token keyword">public</span> typealias H3 = ElementComponent&lt;ElementDefinitions.H3&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;h4&gt;` element.</span>
+<span class="token keyword">public</span> typealias H4 = ElementComponent&lt;ElementDefinitions.H4&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;h5&gt;` element.</span>
+<span class="token keyword">public</span> typealias H5 = ElementComponent&lt;ElementDefinitions.H5&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;h6&gt;` element.</span>
+<span class="token keyword">public</span> typealias H6 = ElementComponent&lt;ElementDefinitions.H6&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;header&gt;` element.</span>
+<span class="token keyword">public</span> typealias Header = ElementComponent&lt;ElementDefinitions.Header&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;li&gt;` element.</span>
+<span class="token keyword">public</span> typealias ListItem = ElementComponent&lt;ElementDefinitions.ListItem&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;main&gt;` element.</span>
+<span class="token keyword">public</span> typealias Main = ElementComponent&lt;ElementDefinitions.Main&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;nav&gt;` element.</span>
+<span class="token keyword">public</span> typealias Navigation = ElementComponent&lt;ElementDefinitions.Navigation&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;p&gt;` element.</span>
+<span class="token keyword">public</span> typealias Paragraph = ElementComponent&lt;ElementDefinitions.Paragraph&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;span&gt;` element.</span>
+<span class="token keyword">public</span> typealias Span = ElementComponent&lt;ElementDefinitions.Span&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;summary&gt;` element.</span>
+<span class="token keyword">public</span> typealias Summary = ElementComponent&lt;ElementDefinitions.Summary&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;caption&gt;` element.</span>
+<span class="token keyword">public</span> typealias TableCaption = ElementComponent&lt;ElementDefinitions.TableCaption&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;td&gt;` element.</span>
+<span class="token keyword">public</span> typealias TableCell = ElementComponent&lt;ElementDefinitions.TableCell&gt;
+<span class="token comment">/// A container component that's rendered using the `&lt;th&gt;` element.</span>
+<span class="token keyword">public</span> typealias TableHeaderCell = ElementComponent&lt;ElementDefinitions.TableHeaderCell&gt;
+</code></pre><p>이부분을 통해서 Component를 제작하실때 필요한 HTML Element를 사용할 수 있습니다.</p><p>Component가 잘 제작이 됬다면</p><pre><code class="language-swift"><span class="token keyword">func</span> makeIndexHTML(<span class="token keyword">for</span> index: Index, context: PublishingContext&lt;Example&gt;) throws -&gt; HTML {
+    HTML(
+        .lang(context.site.language),
+        .head(<span class="token keyword">for</span>: index, on: context.site),
+        .body {
+            HeaderComponent() <span class="token comment">// 제작한 Component</span>
+            PostsLayout()     <span class="token comment">// 제작한 Component</span>
+            FooterComponent() <span class="token comment">// 제작한 Component</span>
+        }
+    )
+}
+</code></pre><p>이런식으로 body에 넣어서 추가가 가능하죠. 간단하게 Component를 추가하는 방법에 대해서 알아보았습니다.</p><p>그럼 한번 제대로된 Publish 프로젝트 하나를 만들어보면서 어떻게 사용해야하는지 감을 잡아봅시다.</p><h2>Example</h2><p>간단하게 디자인 한 이미지를 토대로 개발해보도록 하겠습니다.</p><img width = 100% src = "https://github.com/jihoonahn/blog/assets/68891494/6155676b-0bc2-4661-825d-ad521f4b5df1"></img><p>먼저 기존에 만들어둔 Example에서 진행을 해보겠습니다.</p><pre><code>- Components
+- Layouts
+- Pages
+- Utils
+</code></pre><p>Website를 만들때 이렇게 3가지로 폴더를 분리하였습니다.</p><ul><li><code>Components</code>: <code>Components</code>는 <code>Header</code> 와 <code>Footer</code> 같은 페이지에 필요한 컴포넌트의 집합</li><li><code>Layouts</code>: <code>Layouts</code> 은 page template와 같은 재사용 가능한 UI 구조를 제공합니다.</li><li><code>Pages</code>: <code>Pages</code>는 웹사이트의 모든 페이지에 대한 레이아웃을 처리합니다.</li><li><code>Utils</code>: 코드에 추가적으로 필요한 작업이나 확장 관련된 내용이 포함이 됩니다.</li></ul><p>예시 프로젝트의 폴더에 대한 정보를 봤으니</p><p>일단 모든 페이지에서 공통적으로 사용되는 <code>Header</code>와 <code>Footer</code>부터 작업해보도록 하겠습니다.</p><p>먼저 Header입니다.</p><img width=100% src="https://github.com/jihoonahn/blog/assets/68891494/06bb2285-673e-48d7-a0b3-40270bcdabf3"></img><p>Header부분을 보면 이런식으로 구성되어 있습니다. <br/> Logo를 눌렀을때 index 페이지로 이동하게 하고, section을 눌렀을 때 각각 section에 맞는 페이지로 이동을하는 기능이 필요합니다.</p><pre><code class="language-swift"><span class="token keyword">struct</span> HeaderComponent: Component
+</code></pre><p>먼저 Components 부분에서 HeaderComponent라는 것을 추가하고 Component 프로토콜을 상속 받게 되면</p><pre><code class="language-swift"><span class="token keyword">import</span> Publish
+<span class="token keyword">import</span> Plot
+
+<span class="token keyword">struct</span> HeaderComponent: Component {
+    <span class="token keyword">var</span> body: Component {}
+}
+</code></pre><p>이런식으로 body가 자동으로 만들어지고 저희는 site에 어떤 Section이 있고 사용자가 클릭한 section에 대한 정보를 가져와야 하기 때문에</p><pre><code class="language-swift"><span class="token keyword">var</span> context: PublishingContext&lt;Example&gt;
+</code></pre><p><code>Publish</code> 에 있는 PublishingContext를 통해서 정보를 가져올 수 있게 합니다.</p><pre><code class="language-swift"><span class="token keyword">struct</span> HeaderComponent: Component {
+    <span class="token keyword">var</span> context: PublishingContext&lt;Example&gt;
+
+    <span class="token keyword">var</span> body: Component {
+        Header {
+            Link(<span class="token string">"Blog"</span>, url: <span class="token string">"/"</span>)
+                .<span class="token keyword">class</span>(<span class="token string">"header-logo"</span>)
+            Div {
+                Navigation {
+                    List(Example.SectionID.allCases) { sectionID in
+                        Link(
+                            context.sections[sectionID].title,
+                            url: context.sections[sectionID].path.absoluteString
+                        )
+                        .<span class="token keyword">class</span>(<span class="token string">"header-nav-menu-link"</span>)
+                    }
+                }
+                .<span class="token keyword">class</span>(<span class="token string">"header-nav"</span>)
+            }
+            .<span class="token keyword">class</span>(<span class="token string">"content"</span>)
+        }
+        .<span class="token keyword">class</span>(<span class="token string">"site-header"</span>)
+    }
+}
+</code></pre><p><code>Link</code> 같은 경우는 Html에서 <code>&lt;a&gt;</code> 태그를 담당합니다. Blog 라는 Text를 누르면 기존 타 사이트와 마찬가지로 index 페이지로 이동하도록 만들었고</p><p><code>Section</code> 부분은 List를 사용해서 저희가 <code>main.swift</code> 에 등록한 Section들을 모두 보여주게 만들었습니다.</p><p>그리고 기존 디자인에 맞춰서 코드를 넣어주고 <code>styles.css</code> 에서 style 관련 css 코드를 넣어주었습니다.</p><p>그렇게 하면 이렇게 디자인 했던 것처럼 결과 값을 받아보실 수 있습니다.</p><img src="https://github.com/jihoonahn/blog/assets/68891494/945b5880-100d-4439-ae26-b57c87cea2da"></img><p>그 다음은 Footer 입니다.</p><img width=100% src="https://github.com/jihoonahn/blog/assets/68891494/20cb53bc-5a73-4155-a171-39d6bd79711d"></img><p>굉장하게 간단한 Footer 입니다.</p><p>Text로 구성하고 싶고, <code>Copyright Link</code> 부분을 누르면 저의 깃허브로 이동하도록 만들고 싶네요.</p><pre><code class="language-swift"><span class="token keyword">struct</span> FooterComponent: Component {
+    <span class="token keyword">var</span> body: Component {
+        Footer {
+            <span class="token comment">// code</span>
+        }
+        .<span class="token keyword">class</span>(<span class="token string">"site-footer"</span>)
+    }
+}
+</code></pre><p>Component를 선언후에 Footer를 넣어주고</p><pre><code class="language-swift"><span class="token keyword">struct</span> FooterComponent: Component {
+    <span class="token keyword">var</span> body: Component {
+        Footer {
+            Paragraph(<span class="token string">"Made with Publish"</span>)
+            Paragraph {
+                Text(<span class="token string">"Copyright © "</span>)
+                Link(<span class="token string">"Jihoonahn"</span>, url: <span class="token string">"https://github.com/jihoonahn"</span>)
+            }
+            .<span class="token keyword">class</span>(<span class="token string">"copyright"</span>)
+        }
+        .<span class="token keyword">class</span>(<span class="token string">"site-footer"</span>)
+    }
+}
+</code></pre><p>이렇게 간단하게 구축했습니다.</p><p><code>Paragraph</code> 가 HTML에서는 <code>&lt;p&gt;</code> 태그의 역할을 하고, 저희는 copyright 부분중에 Jihoonahn 이라고 적힌 부분을 눌렀을 때 깃허브로 이동시키고 싶으니 이렇게 <code>Paragraph</code> 내부에 <code>Text</code> 와 <code>Link</code> 를 넣어줍니다.</p><p>이렇게 되면 <code>"Copyright © "</code> 부분을 눌렀을 때는 링크로 이동하지 않지만, <code>Jihoonahn</code> 을 눌렀을때만 이동을 하게 됩니다.</p><p>마찬가지로 기존 디자인에 맞춰서 코드를 넣어주고 <code>styles.css</code> 에서 style 관련 css 코드를 넣어주었습니다.</p><img width=100% src="https://github.com/jihoonahn/blog/assets/68891494/a7fd064d-7048-4151-9acf-7712b2474bbf"></img><p>간단하게 Header 와 Footer Component를 만들었고 한번 이제 페이지를 구축해볼까요?</p><h3>Index</h3><pre><code class="language-swift"><span class="token keyword">func</span> makeIndexHTML(<span class="token keyword">for</span> index: Index, context: PublishingContext&lt;Example&gt;) throws -&gt; HTML {
+    HTML(
+        .lang(context.site.language),
+        .head(<span class="token keyword">for</span>: index, on: context.site, stylesheetPaths: []),
+        .body {
+            <span class="token comment">// Index Page</span>
+        }
+    )
+}
+</code></pre><p>기존의 <code>HTMLFactory</code> 에서 index부분 부터 한번 작업을 해보도록하겠습니다.</p><p>Index의 Page부분을 만들기 위해서 <code>Pages</code> 폴더에서 <code>IndexPage.swift</code> 파일을 만들었습니다.</p><pre><code class="language-swift"><span class="token keyword">struct</span> IndexPage: Component {
+    <span class="token keyword">var</span> context: PublishingContext&lt;Example&gt;
+
+    <span class="token keyword">var</span> body: Component {
+        ComponentGroup {
+            HeaderComponent(context: context)
+            FooterComponent()
+        }
+    }
+}
+</code></pre><p>여러개의 Component가 동시에 들어가기 때문에 <code>ComponentGroup</code> 로 묶어 두고 기존에 만들어둔 Header와 Footer을 넣어둡니다.</p><p>그리고 <code>Layouts</code> 폴더에 <code>PostsLayout.swift</code> 란 파일을 만들어서</p><pre><code class="language-swift"><span class="token keyword">struct</span> PostsLayout: Component
+</code></pre><p><code>PostsLayout</code> 이라는 Component를 만들고</p><p>다시 IndexPage로 돌아가서</p><pre><code class="language-swift"><span class="token keyword">struct</span> IndexPage: Component {
+    <span class="token keyword">var</span> context: PublishingContext&lt;Example&gt;
+
+    <span class="token keyword">var</span> body: Component {
+        ComponentGroup {
+            HeaderComponent(context: context)
+            PostsLayout()
+            FooterComponent()
+        }
+    }
+}
+</code></pre><p>이런식으로 <code>PostsLayout</code> 도 추가로 넣어둡니다.</p><p>그리고 <code>IndexPage</code> 를 <code>HTMLFactory</code> 의 <code>makeIndexHTML</code> method에 넣어줍니다.</p><pre><code class="language-swift"><span class="token keyword">func</span> makeIndexHTML(<span class="token keyword">for</span> index: Index, context: PublishingContext&lt;Example&gt;) throws -&gt; HTML {
+    HTML(
+        .lang(context.site.language),
+        .head(<span class="token keyword">for</span>: index, on: context.site),
+        .body {
+            IndexPage(context: context)
+        }
+    )
+}
+</code></pre><p>그럼 이제 Index 부분을 완성하기 위해서 <code>PostsLayout</code> 부분을 채워볼까요?</p><p>Posts 같은 경우</p><img src="https://github.com/jihoonahn/blog/assets/68891494/30bdd5a9-8e18-4ffd-9817-b7a2af4ed663"></img><p>이 부분이 반복됩니다. 전체가 링크로 감싸져 있는 형태이죠.</p><p>시작하기 전에 Publish에서 확장이 되어 있지 않는 Component가 몇가지 있습니다. 그중에 PostsLayout에서 사용하고 싶은 <code>section</code> 도 아직은 존재하지 않죠</p><p>그러므로 만약 없는 Component들은 어떻게 해야하는지 보도록 하겠습니다.</p><p><code>Utils/Plot/ElementDefinitions.swift</code> 파일을 보시면 됩니다.</p><p><code>Publish</code> 의 HTML 부분을 담당하는 <code>Plot</code> 에서 <code>Section</code> 이 <code>Node</code>에서는 <code>Component</code> 타입으로 존재하지 않는것이기 때문에</p><pre><code class="language-swift"><span class="token keyword">extension</span> ElementDefinitions {
+    <span class="token keyword">enum</span> Section: ElementDefinition { <span class="token keyword">public</span> <span class="token keyword">static</span> <span class="token keyword">var</span> wrapper = Node.section }
+}
+
+typealias Section = ElementComponent&lt;ElementDefinitions.Section&gt;
+</code></pre><p>이런 방식으로 기존의 Plot의 <code>ElementDefinitions</code> 부분을 참고하여 확장하시면 됩니다.</p><p>이제 <code>PostsLayout</code> 을 제작해보겠습니다.</p><pre><code class="language-swift"><span class="token keyword">let</span> items: [Item&lt;Example&gt;]
+</code></pre><ul><li><code>items</code> 는 Post들을 가져오는 역할을 합니다.</li></ul><p>이 프로퍼티를 추가해주고 <code>IndexPage.swift</code> 를 수정해줍니다.</p><pre><code class="language-swift"><span class="token keyword">struct</span> IndexPage: Component {
+    <span class="token keyword">var</span> context: PublishingContext&lt;Example&gt;
+
+    <span class="token keyword">var</span> body: Component {
+        ComponentGroup {
+            HeaderComponent(context: context)
+            PostsLayout(items: context.allItems(sortedBy: \.date))
+            FooterComponent()
+        }
+    }
+}
+</code></pre><p>이런 식으로 Context의 모든 Item을 들고오면서 날짜 순서대로 정렬이 되도록 해뒀습니다.</p><p>다시 <code>PostsLayout</code> 부분으로 돌아가서</p><pre><code class="language-swift"><span class="token keyword">struct</span> PostsLayout: Component {
+    <span class="token keyword">let</span> items: [Item&lt;Example&gt;]
+
+    <span class="token keyword">var</span> body: Component {
+        Section {
+            Div {
+                List(items) { item in
+                    Article {
+                        Link(url: item.path.absoluteString) {
+                            Paragraph(item.tags.map{ $<span class="token number">0</span>.string }.joined(separator: <span class="token string">", "</span>))
+                                .<span class="token keyword">class</span>(<span class="token string">"posts-tag"</span>)
+                            H3(item.title)
+                                .<span class="token keyword">class</span>(<span class="token string">"posts-title"</span>)
+                            Paragraph(item.description)
+                                .<span class="token keyword">class</span>(<span class="token string">"posts-description"</span>)
+                        }
+                        .<span class="token keyword">class</span>(<span class="token string">"posts-link"</span>)
+                    }
+                    .<span class="token keyword">class</span>(<span class="token string">"posts-article"</span>)
+                }
+                .<span class="token keyword">class</span>(<span class="token string">"posts-list"</span>)
+            }
+            .<span class="token keyword">class</span>(<span class="token string">"site-posts-inner"</span>)
+        }
+        .<span class="token keyword">class</span>(<span class="token string">"site-posts"</span>)
+    }
+}
+</code></pre><p><code>items</code> 값을 <code>List(&lt;ul&gt;)</code>로 보여줄 수 있도록 제작하고 <code>styles.css</code> 에 css 코드를 넣어주면 됩니다.</p><img width=100% src="https://github.com/jihoonahn/blog/assets/68891494/8db4b824-1c1e-48a0-a5f2-66e761a9ccf0"></img><p>실행을 해보면 위 Index 디자인한것과 같은 결과물을 얻을 수 있습니다.</p><p>그 다음으로는 Section 부분을 처리해보겠습니다.</p><h3>Section</h3><pre><code class="language-swift"><span class="token keyword">func</span> makeSectionHTML(<span class="token keyword">for</span> section: Publish.Section&lt;Example&gt;, context: Publish.PublishingContext&lt;Example&gt;) throws -&gt; HTML {
+    HTML(
+        .lang(context.site.language),
+        .head(<span class="token keyword">for</span>: section, on: context.site),
+        .body {
+            <span class="token comment">// Section Code</span>
+        }
+    )
+}
+</code></pre><p><code>HTMLFactory</code> 부분에서 <code>makeSectionHTML</code> 메서드에 Section 코드를 추가하면 됩니다.</p><pre><code class="language-swift"><span class="token keyword">struct</span> SectionPage: Component
+</code></pre><p><code>Pages/Section/SectionPage.swift</code> 파일에 SectionPage라는 Component를 만들고</p><pre><code class="language-swift"><span class="token keyword">var</span> section: Publish.Section&lt;Example&gt;
+<span class="token keyword">var</span> context: PublishingContext&lt;Example&gt;
+</code></pre><p>Example의 <code>section</code> 과 <code>Context</code> 를 가져와 줍니다.</p><pre><code class="language-swift"><span class="token keyword">struct</span> SectionPage: Component {
+    <span class="token keyword">var</span> section: Publish.Section&lt;Example&gt;
+    <span class="token keyword">var</span> context: PublishingContext&lt;Example&gt;
+
+    <span class="token keyword">var</span> body: Component {
+        <span class="token keyword">switch</span> section.path.string {
+        <span class="token keyword">case</span> Example.SectionID.blog.rawValue:
+            <span class="token keyword">return</span> IndexPage(context: context)
+        <span class="token keyword">case</span> Example.SectionID.about.rawValue:
+            <span class="token comment">// About Page</span>
+        <span class="token keyword">default</span>: <span class="token keyword">return</span> Div()
+        }
+    }
+}
+</code></pre><p>이렇게 section의 path가 <code>blog</code>이면 <code>IndexPage</code>를 보여주게 하고 <code>about</code> 이라면 <code>AboutPage</code>를 보여주게 만듭니다.</p><pre><code class="language-swift"><span class="token keyword">struct</span> AboutPage: Component {
+    <span class="token keyword">var</span> context: PublishingContext&lt;Example&gt;
+
+    <span class="token keyword">var</span> body: Component {
+        ComponentGroup {
+            HeaderComponent(context: context)
+            Div {
+                Image(<span class="token string">"/images/AboutPageImage.svg"</span>)
+                H2(<span class="token string">"Publish Example"</span>)
+                Paragraph(<span class="token string">"Jihoonahn’s Blog Example"</span>)
+            }
+            .<span class="token keyword">class</span>(<span class="token string">"site-about"</span>)
+            FooterComponent()
+        }
+    }
+}
+</code></pre><p>그리고 <code>SectionPage</code>에 넣어둘 <code>AboutPage</code>가 필요하기 때문에 간단하게 제작하고,</p><pre><code class="language-swift"><span class="token keyword">struct</span> SectionPage: Component {
+    <span class="token keyword">var</span> section: Publish.Section&lt;Example&gt;
+    <span class="token keyword">var</span> context: PublishingContext&lt;Example&gt;
+
+    <span class="token keyword">var</span> body: Component {
+        <span class="token keyword">switch</span> section.path.string {
+        <span class="token keyword">case</span> Example.SectionID.blog.rawValue:
+            <span class="token keyword">return</span> IndexPage(context: context)
+        <span class="token keyword">case</span> Example.SectionID.about.rawValue:
+            <span class="token keyword">return</span> AboutPage(context: context)
+        <span class="token keyword">default</span>: <span class="token keyword">return</span> Div()
+        }
+    }
+}
+</code></pre><p>이렇게 넣어두면</p><img width=100% src="https://github.com/jihoonahn/blog/assets/68891494/04a19586-afba-485e-8304-10071c65af01"></img><p>이렇게 Header에 있는 <code>About</code> Section을 누르게 되면 <code>AboutPage</code> 로 이동이 되게 만들 수 있습니다.</p><h3>Post</h3><p>그 다음으로는 Index에서 Post중 하나를 눌렀을 때 그 Post의 내용을 볼 수 있도록 만들겠습니다.</p><pre><code class="language-swift"><span class="token keyword">func</span> makeItemHTML(<span class="token keyword">for</span> item: Item&lt;Example&gt;, context: PublishingContext&lt;Example&gt;) throws -&gt; HTML {
+    HTML(
+        .lang(context.site.language),
+        .head(<span class="token keyword">for</span>: item, on: context.site),
+        .body {
+            <span class="token comment">/// Post</span>
+        }
+    )
+}
+</code></pre><p>이곳에 <code>post</code> 들의 item을 가져올 수 있습니다.</p><pre><code class="language-swift"><span class="token keyword">struct</span> PostLayout: Component
+</code></pre><p><code>Layouts/PostLayout.swift</code> 에서 위 Index와 비슷하게 <code>PostLayout</code> 이라는 Component를 만들어주겠습니다.</p><p>그리고 <code>PostLayout</code> 부분에서 Item 내용을 가져오기 위해서</p><pre><code class="language-swift"><span class="token keyword">var</span> item: Item&lt;Example&gt;
+<span class="token keyword">var</span> context: PublishingContext&lt;Example&gt;
+</code></pre><ul><li><code>item</code> 프로퍼티를 통해서 가져올 수 있도록 하였습니다.</li><li><code>context</code>는 tag의 url을 가져오기 위해서 사용하였습니다.</li></ul><pre><code class="language-swift"><span class="token keyword">struct</span> PostLayout: Component {
+    <span class="token keyword">var</span> item: Item&lt;Example&gt;
+    <span class="token keyword">var</span> context: PublishingContext&lt;Example&gt;
+
+    <span class="token keyword">var</span> body: Component {
+        Section {
+            Article {
+                Div {
+                    <span class="token keyword">for</span> tag in item.tags {
+                        Link(tag.string, url: context.site.url(<span class="token keyword">for</span>: tag))
+                            .<span class="token keyword">class</span>(<span class="token string">"post-tag"</span>)
+                    }
+                    H2(item.title)
+                        .<span class="token keyword">class</span>(<span class="token string">"post-title"</span>)
+                    Paragraph(DateFormatter.time.string(from: item.date))
+                        .<span class="token keyword">class</span>(<span class="token string">"post-date"</span>)
+                }
+                .<span class="token keyword">class</span>(<span class="token string">"site-post-header"</span>)
+                Div {
+                    Div {
+                        Node.contentBody(item.body)
+                    }
+                }
+                .<span class="token keyword">class</span>(<span class="token string">"site-post-content"</span>)
+            }
+            .<span class="token keyword">class</span>(<span class="token string">"site-post-article"</span>)
+        }
+        .<span class="token keyword">class</span>(<span class="token string">"site-post"</span>)
+    }
+}
+</code></pre><p>디자인 대로 구축한 <code>PostLayout</code> 코드입니다.</p><pre><code class="language-swift"><span class="token keyword">for</span> tag in item.tags {
+    Link(tag.string, url: context.site.url(<span class="token keyword">for</span>: tag))
+        .<span class="token keyword">class</span>(<span class="token string">"post-tag"</span>)
+}
+</code></pre><p>item에 있는 tag들을 가져와서 눌렀을때 Tag에 관련된 Post를 찾을 수 있는 페이지로 이동시킵니다.</p><pre><code class="language-swift">Node.contentBody(item.body)
+</code></pre><p>그리고 저희가 <code>Content</code> 파일에 markdown으로 추가한 내용을 볼 수 있도록 <code>Node</code> 의 <code>contentBody</code> 메서드를 사용해주시면 됩니다.</p><pre><code class="language-swift"><span class="token keyword">struct</span> PostPage: Component {
+    <span class="token keyword">var</span> item: Item&lt;Example&gt;
+    <span class="token keyword">var</span> context: PublishingContext&lt;Example&gt;
+
+    <span class="token keyword">var</span> body: Component {
+        ComponentGroup {
+            HeaderComponent(context: context)
+            PostLayout(item: item, context: context)
+            FooterComponent()
+        }
+    }
+}
+</code></pre><p>그리고 <code>PostLayout</code>을 만들었으니, <code>PostPage</code> 에 <code>PostLayout</code>을 가져와주시면 됩니다.</p><pre><code class="language-swift"><span class="token keyword">func</span> makeItemHTML(<span class="token keyword">for</span> item: Item&lt;Example&gt;, context: PublishingContext&lt;Example&gt;) throws -&gt; HTML {
+    HTML(
+        .lang(context.site.language),
+        .head(<span class="token keyword">for</span>: item, on: context.site),
+        .body {
+            PostPage(item: item, context: context)
+        }
+    )
+}
+</code></pre><p>다시 <code>HTMLFactory</code> 부분으로 돌아가서 <code>PostPage</code> 부분을 body에 넣어주시면</p><img width=100% src="https://github.com/jihoonahn/blog/assets/68891494/1043641c-3e1e-4bec-bc31-6612f6a0bfdf"></img><p>이렇게 Markdown에 있는 Post가 잘 작동하는 것을 확인할 수 있습니다.</p><h3>Page</h3><p><code>makePageHTML</code> 부분은 특별하게 예시에서는 사용하고 있지 않기 때문에</p><pre><code class="language-swift"><span class="token keyword">func</span> makePageHTML(<span class="token keyword">for</span> page: Page, context: PublishingContext&lt;Example&gt;) throws -&gt; HTML {
+    HTML(
+        .lang(context.site.language),
+        .head(<span class="token keyword">for</span>: page, on: context.site),
+        .body {
+            page.body
+        }
+    )
+}
+</code></pre><p><code>page.body</code> 만 보이게 해뒀습니다.</p><h3>Tag List</h3><p>그 다음은 <code>TagList</code> 입니다. Post에 있는 모든 Tag들을 한번에 가져와서 볼 수 있게 하는 역할을 합니다.</p><pre><code class="language-swift"><span class="token keyword">func</span> makeTagListHTML(<span class="token keyword">for</span> page: Publish.TagListPage, context: PublishingContext&lt;Example&gt;) throws -&gt; HTML? {
+    HTML(
+        .lang(context.site.language),
+        .head(<span class="token keyword">for</span>: page, on: context.site),
+        .body {
+            <span class="token comment">// TagList Code</span>
+        }
+    )
+}
+</code></pre><p><code>HTMLFactory</code> 부분에서 <code>makeTagListHTML</code> 에서 처리할 수 있습니다.</p><pre><code class="language-swift"><span class="token keyword">struct</span> TagListPage: Component
+</code></pre><p>먼저 <code>TagListPage</code> 에서 마찬가지로 Component를 생성하고</p><pre><code class="language-swift"><span class="token keyword">let</span> tags: Set&lt;Tag&gt;
+</code></pre><p><code>TagListPage</code>에서는 <code>Publish.TagListPage</code>에 있는 모든 태그를 들고 올 수 있게 <code>Set&lt;Tag&gt;</code> 타입을 사용합니다.</p><pre><code class="language-swift"><span class="token keyword">struct</span> TagListPage: Component {
+    <span class="token keyword">let</span> tags: [Tag]
+    <span class="token keyword">let</span> context: PublishingContext&lt;Example&gt;
+
+    <span class="token keyword">var</span> body: Component {
+        ComponentGroup {
+            HeaderComponent(context: context)
+            List(tags) { tag in
+                ListItem {
+                    Link(tag.string, url: context.site.url(<span class="token keyword">for</span>: tag))
+                }
+                .<span class="token keyword">class</span>(<span class="token string">"site-tag"</span>)
+            }
+            .<span class="token keyword">class</span>(<span class="token string">"site-tagList"</span>)
+            FooterComponent()
+        }
+    }
+}
+</code></pre><p>그리고 <code>tags</code> 를 List에 넣어서 보여주고 <code>styles.css</code> 에서 간단한 css 코드만 추가해주었습니다.</p><pre><code class="language-swift"><span class="token keyword">func</span> makeTagListHTML(<span class="token keyword">for</span> page: Publish.TagListPage, context: PublishingContext&lt;Example&gt;) throws -&gt; HTML? {
+    HTML(
+        .lang(context.site.language),
+        .head(<span class="token keyword">for</span>: page, on: context.site),
+        .body {
+            TagListPage(tags: page.tags, context: context)
+        }
+    )
+}
+</code></pre><p>다시 <code>HTMLFactory</code> 코드로 돌아와서 <code>TagListPage</code>를 넣어줍니다.</p><img width=100% src="https://github.com/jihoonahn/blog/assets/68891494/f069ee2d-da19-4d8a-a44e-9e1dd386174b"></img><p>이렇게 디자인과 같은 TagList 페이지를 얻을 수 있습니다.</p><h3>TagDetail</h3><p>마지막 <code>TagDetail</code> 부분입니다. 지정된 tag를 눌렀을 때 이 tag를 가지고 있는 post를 보여주는 역할을 합니다.</p><pre><code class="language-swift"><span class="token keyword">func</span> makeTagDetailsHTML(<span class="token keyword">for</span> page: Publish.TagDetailsPage, context: PublishingContext&lt;Example&gt;) throws -&gt; HTML? {
+    HTML(
+        .lang(context.site.language),
+        .head(<span class="token keyword">for</span>: page, on: context.site),
+        .body {
+            <span class="token comment">// Tag Details Code</span>
+        }
+    )
+}
+</code></pre><p><code>HTMLFactory</code>에서 마지막 하나 남은 메서드인 <code>makeTagDetailsHTML</code> 에서 작업을 하실 수 있습니다.</p><pre><code class="language-swift"><span class="token keyword">struct</span> TagDetailPage: Component
+</code></pre><p><code>TagDetailPage</code>라는 Component를 선언하고</p><pre><code class="language-swift"><span class="token keyword">let</span> items: [Item&lt;Example&gt;]
+<span class="token keyword">let</span> selectedTag: Tag
+</code></pre><ul><li><code>items</code>: Tag에 포함된 post들을 가져옵니다.</li><li><code>selectedTag</code>: 선택된 Tag의 정보를 알려줍니다.</li></ul><p>위의 프로퍼티들을 추가해주시고</p><pre><code class="language-swift"><span class="token keyword">struct</span> TagDetailsPage: Component {
+    <span class="token keyword">let</span> items: [Item&lt;Example&gt;]
+    <span class="token keyword">let</span> context: PublishingContext&lt;Example&gt;
+    <span class="token keyword">let</span> selectedTag: Tag
+
+    <span class="token keyword">var</span> body: Component {
+        ComponentGroup {
+            HeaderComponent(context: context)
+            Div {
+                H2(selectedTag.string)
+                PostsLayout(items: items)
+            }
+            .<span class="token keyword">class</span>(<span class="token string">"site-tagDetails"</span>)
+            FooterComponent()
+        }
+    }
+}
+</code></pre><p>기존의 <code>PostsLayout</code> 을 가져오는 방식으로 간단하게 처리하고</p><pre><code class="language-swift"><span class="token keyword">func</span> makeTagDetailsHTML(<span class="token keyword">for</span> page: Publish.TagDetailsPage, context: PublishingContext&lt;Example&gt;) throws -&gt; HTML? {
+    HTML(
+        .lang(context.site.language),
+        .head(<span class="token keyword">for</span>: page, on: context.site),
+        .body {
+            TagDetailsPage(
+                items: context.items(
+                    taggedWith: page.tag,
+                    sortedBy: \.date
+                ),
+                context: context,
+                selectedTag: page.tag
+            )
+        }
+    )
+}
+</code></pre><p>이렇게 <code>HTMLFactory</code>의 <code>makeTagDetailsHTML</code>에 넣어주시면 되는데,</p><pre><code class="language-swift">items: context.items(
+    taggedWith: page.tag,
+    sortedBy: \.date
+),
+</code></pre><p><code>items</code>를 가져오는 부분을 보면 context의 items를 가져오는데 <code>page.tag</code>가 포함되어 있는 <code>item</code> 만 가져오게 해준다라고 생각하시면 될것 같습니다.</p><img width=100% src="https://github.com/jihoonahn/blog/assets/68891494/30e5ace0-1f7e-408a-b779-687e48114af1"></img><p>이런식으로 Tag를 눌렀을때 잘 조회가 되는것을 확인할 수 있습니다. 이렇게 해서 저희는 Publish로 웹사이트 하나를 뚝딱 만들어 봤습니다.</p><p>위에서 진행한 내용은 <a href="https://github.com/Jihoonahn/Blog-Document/tree/main/Publish/part2">예시코드</a> 를 확인할 수 있습니다.</p><hr><p>이번 글에서는 Publish에서 HTML을 작성하는 방법과, 직접 예제를 만들어보며 Publish를 이용해서 실질적인 웹사이트를 만들어 봤습니다.</p><p>다음글에서는 Publish로 만든 웹사이트를 배포하는 법에 대해서 작성할 예정입니다.</p></div><div class="max-w-2xl mx-auto px-6"><div class="flex flex-col gap-4 px-4 mt-11 mb-4 max-w-3xl mx-auto md:flex-row md:px-0 md:gap-8"><div class="min-w-0 flex-1"><a href="/posts/publish-part-1" class="flex cursor-pointer items-center w-full h-full"><div class="p-4 w-full h-full rounded-lg bg-black border border-neutral-800 hover:border-neutral-600 hover:shadow-sm transition-all duration-200 cursor-pointer"><p class="text-sm text-gray-500 mb-2">Preview Post</p><h3 class="text-2xl font-semibold text-neutral-300 hover:text-white transition-colors">Publish 사용하기 part 1</h3></div></a></div><div class="min-w-0 flex-1"><a href="/posts/publish-part-3" class="flex cursor-pointer items-center w-full h-full"><div class="p-4 w-full h-full rounded-lg bg-black border border-neutral-800 hover:border-neutral-600 hover:shadow-sm transition-all duration-200 cursor-pointer text-right"><p class="text-sm text-gray-500 mb-2 text-right">Next Post</p><h3 class="text-2xl font-semibold text-neutral-300 hover:text-white transition-colors">Publish 사용하기 part 3</h3></div></a></div></div></div></div><script>document.addEventListener('DOMContentLoaded', function() {
+    var viewport = document.querySelector('.screen-carousel-viewport');
+    var strip = document.getElementById('screen-carousel-strip');
+    var dots = document.querySelectorAll('.screen-carousel-dot');
+    if (viewport &amp;&amp; strip &amp;&amp; dots.length) {
+        function goTo(i) {
+            var w = viewport.offsetWidth;
+            viewport.scrollLeft = i * w;
+            dots.forEach(function(d, j) {
+                d.classList.toggle('is-active', j === i);
+            });
+        }
+        dots.forEach(function(dot, i) {
+            dot.addEventListener('click', function() { goTo(i); });
+        });
+        viewport.addEventListener('scroll', function() {
+            var i = Math.round(viewport.scrollLeft / viewport.offsetWidth);
+            i = Math.max(0, Math.min(i, dots.length - 1));
+            dots.forEach(function(d, j) { d.classList.toggle('is-active', j === i); });
+        });
+    }
+    var codeBlocks = document.querySelectorAll('.markdown-content pre');
+    codeBlocks.forEach(function(pre) {
+        var copyButton = document.createElement('button');
+        copyButton.textContent = 'Copy';
+        copyButton.className = 'copy-code-button';
+        copyButton.addEventListener('click', function() {
+            var codeElement = pre.querySelector('code');
+            var codeText = codeElement ? codeElement.textContent : pre.textContent;
+            navigator.clipboard.writeText(codeText).then(function() {
+                copyButton.textContent = 'Copied!';
+                setTimeout(function() { copyButton.textContent = 'Copy'; }, 1500);
+            }).catch(function() {
+                var textArea = document.createElement('textarea');
+                textArea.value = codeText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                copyButton.textContent = 'Copied!';
+                setTimeout(function() { copyButton.textContent = 'Copy'; }, 1500);
+            });
+        });
+        pre.appendChild(copyButton);
+    });
+});</script></main><footer class="left-0 right-0 flex justify-center items-center px-6 my-10 max-w-4xl mx-auto"><div class="flex flex-row justify-center items-center px-4 py-2 rounded-full border border-neutral-800 bg-neutral-900/90 backdrop-blur-sm"><p class="text-neutral-400 text-sm">© 2025 jihoon.me. All rights reserved.</p></div></footer></body></html>

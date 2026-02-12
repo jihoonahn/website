@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+<channel>
+    <title>Swift Blog</title>
+    <description>Swift 개발과 관련된 블로그 포스트들</description>
+    <link>https://jihoon.me</link>
+    <language>ko</language>
+    <lastBuildDate>Thu, 12 Feb 2026 12:41:31 +0000</lastBuildDate>
+    <atom:link href="https://jihoon.me/feed.rss" rel="self" type="application/rss+xml"/>
+    <ttl>60</ttl>
+<item>
+    <title>SwiftUI 소개</title>
+    <link>https://jihoon.me/posts/what-is-swiftui</link>
+    <guid>https://jihoon.me/posts/what-is-swiftui</guid>
+    <pubDate>Thu, 20 Oct 2022 17:02:00 +0000</pubDate>
+    <description>선언형 UI로 생산성을 높여주는 SwiftUI에 대한 설명입니다.</description><enclosure url="/thumbnail/what-is-swiftui.svg" type="image/jpeg"/></item>
+<item>
+    <title>Swift Layout 제작기</title>
+    <link>https://jihoon.me/posts/swift-layout</link>
+    <guid>https://jihoon.me/posts/swift-layout</guid>
+    <pubDate>Mon, 15 Dec 2025 11:00:00 +0000</pubDate>
+    <description>UIKit 기반 Manual Layout을 사용하는 SwiftUI DSL 라이브러리 제작기 입니다.</description><enclosure url="/thumbnail/swift-layout.svg" type="image/jpeg"/></item>
+<item>
+    <title>Actor 란</title>
+    <link>https://jihoon.me/posts/actor</link>
+    <guid>https://jihoon.me/posts/actor</guid>
+    <pubDate>Sat, 7 Feb 2026 21:30:00 +0000</pubDate>
+    <description>Actor에 대해서 알아보겠습니다.</description><enclosure url="/thumbnail/actor.svg" type="image/jpeg"/></item>
+<item>
+    <title>LetSwift 2023 회고록</title>
+    <link>https://jihoon.me/posts/letswift-2023</link>
+    <guid>https://jihoon.me/posts/letswift-2023</guid>
+    <pubDate>Wed, 13 Dec 2023 16:20:00 +0000</pubDate>
+    <description>LetSwift 2023 발표 회고</description><enclosure url="/thumbnail/letswift-2023.svg" type="image/jpeg"/></item>
+<item>
+    <title>Publish 사용하기 part 1</title>
+    <link>https://jihoon.me/posts/publish-part-1</link>
+    <guid>https://jihoon.me/posts/publish-part-1</guid>
+    <pubDate>Tue, 12 Sep 2023 04:03:00 +0000</pubDate>
+    <description>Swift publish 구조 살펴보기</description><enclosure url="/thumbnail/publish-part-1.svg" type="image/jpeg"/></item>
+<item>
+    <title>Publish 소개</title>
+    <link>https://jihoon.me/posts/publish-introduce</link>
+    <guid>https://jihoon.me/posts/publish-introduce</guid>
+    <pubDate>Tue, 22 Aug 2023 16:51:00 +0000</pubDate>
+    <description>Swift로 Static Site 만들기</description><enclosure url="/thumbnail/publish-introduce.svg" type="image/jpeg"/></item>
+<item>
+    <title>Universal Framework</title>
+    <link>https://jihoon.me/posts/universal-framework</link>
+    <guid>https://jihoon.me/posts/universal-framework</guid>
+    <pubDate>Sun, 2 Apr 2023 18:30:00 +0000</pubDate>
+    <description>Universal Framework에 대한 공부</description><enclosure url="/thumbnail/universal-framework.svg" type="image/jpeg"/></item>
+<item>
+    <title>Publish 사용하기 part 2</title>
+    <link>https://jihoon.me/posts/publish-part-2</link>
+    <guid>https://jihoon.me/posts/publish-part-2</guid>
+    <pubDate>Thu, 26 Oct 2023 14:48:00 +0000</pubDate>
+    <description>Swift publish 커스텀하기</description><enclosure url="/thumbnail/publish-part-2.svg" type="image/jpeg"/></item>
+<item>
+    <title>Swift Concurrency</title>
+    <link>https://jihoon.me/posts/swift-concurrency</link>
+    <guid>https://jihoon.me/posts/swift-concurrency</guid>
+    <pubDate>Fri, 6 Feb 2026 21:24:00 +0000</pubDate>
+    <description>Swift Concurrency에 대해서 알아보겠습니다.</description><enclosure url="/thumbnail/swift-concurrency.svg" type="image/jpeg"/></item>
+<item>
+    <title>Publish 사용하기 part 3</title>
+    <link>https://jihoon.me/posts/publish-part-3</link>
+    <guid>https://jihoon.me/posts/publish-part-3</guid>
+    <pubDate>Sat, 18 Nov 2023 15:48:00 +0000</pubDate>
+    <description>Swift publish 배포하기</description><enclosure url="/thumbnail/publish-part-3.svg" type="image/jpeg"/></item>
+<item>
+    <title>와글와글 제4회 발표 회고록</title>
+    <link>https://jihoon.me/posts/yackety-yak-ios-4</link>
+    <guid>https://jihoon.me/posts/yackety-yak-ios-4</guid>
+    <pubDate>Sat, 11 Feb 2023 05:25:00 +0000</pubDate>
+    <description>와글와글 iOS 제 4회 발표 회고</description><enclosure url="/thumbnail/yackety-yak-ios-4.svg" type="image/jpeg"/></item>
+<item>
+    <title>SwiftUI에 MVVM이 필요할까요?</title>
+    <link>https://jihoon.me/posts/swiftui-need-mvvm</link>
+    <guid>https://jihoon.me/posts/swiftui-need-mvvm</guid>
+    <pubDate>Wed, 21 Sep 2022 12:00:00 +0000</pubDate>
+    <description>요즘 이슈가 되고 있는 내용으로, 과연 SwiftUI에는 MVVM이 필요한지에 대한 저의 주관적인 생각을 담은 글입니다.</description><enclosure url="/thumbnail/swiftui-need-mvvm.svg" type="image/jpeg"/></item>
+<item>
+    <title>Scade 소개</title>
+    <link>https://jihoon.me/posts/scade-introduce</link>
+    <guid>https://jihoon.me/posts/scade-introduce</guid>
+    <pubDate>Fri, 17 Mar 2023 21:24:00 +0000</pubDate>
+    <description>Swift로 크로스플랫폼 만드는 방법을 아시나요?</description><enclosure url="/thumbnail/scade-introduce.svg" type="image/jpeg"/></item>
+<item>
+    <title>Xcode-Beta에서 Tuist 사용기</title>
+    <link>https://jihoon.me/posts/tuist-xcodebeta</link>
+    <guid>https://jihoon.me/posts/tuist-xcodebeta</guid>
+    <pubDate>Sat, 10 Jun 2023 00:03:00 +0000</pubDate>
+    <description>Xcode Beta에서 tuist edit 명령어에서 에러나는 부분을 해결하는 방법에 대한 포스트입니다.</description><enclosure url="/thumbnail/tuist-xcodebeta.svg" type="image/jpeg"/></item>
+<item>
+    <title>제 1회 IGA 발표 회고록</title>
+    <link>https://jihoon.me/posts/iga-ios-1</link>
+    <guid>https://jihoon.me/posts/iga-ios-1</guid>
+    <pubDate>Mon, 10 Jul 2023 13:22:00 +0000</pubDate>
+    <description>IGA 발표 회고</description><enclosure url="/thumbnail/iga-ios-1.svg" type="image/jpeg"/></item>
+<item>
+    <title>TuistUI</title>
+    <link>https://jihoon.me/posts/tuistui</link>
+    <guid>https://jihoon.me/posts/tuistui</guid>
+    <pubDate>Tue, 8 Apr 2025 23:29:00 +0000</pubDate>
+    <description>Tuist를 SwiftUI 처럼 사용할 수 있는 DSL Plugin인 제가 만든 TuistUI를 소개합니다.</description><enclosure url="/thumbnail/tuistui.svg" type="image/jpeg"/></item>
+<item>
+    <title>Swift란?</title>
+    <link>https://jihoon.me/posts/what-is-swift</link>
+    <guid>https://jihoon.me/posts/what-is-swift</guid>
+    <pubDate>Sun, 11 Apr 2021 07:02:00 +0000</pubDate>
+    <description>Swift 언어에 대한 소개입니다.</description><enclosure url="/thumbnail/what-is-swift.svg" type="image/jpeg"/></item>
+</channel>
+</rss>

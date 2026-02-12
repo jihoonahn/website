@@ -1,0 +1,228 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"/><meta property="og:site_name" content="TuistUI"/><link rel="canonical" href="https://jihoon.me"/><meta name="twitter:url" content="https://jihoon.me"/><meta property="og:url" content="https://jihoon.me"/><title>TuistUI</title><meta name="twitter:title" content="TuistUI"/><meta property="og:title" content="TuistUI"/><meta name="description" content="---
+title: TuistUI
+date: 2025-04-08 23:29
+tags: Swift, Tuist, Plugin, Tuistui
+image: thumbnail/tuistui.svg
+description: Tuist를 SwiftUI 처럼 사용할 수 있는 DSL"/><meta name="twitter:description" content="---
+title: TuistUI
+date: 2025-04-08 23:29
+tags: Swift, Tuist, Plugin, Tuistui
+image: thumbnail/tuistui.svg
+description: Tuist를 SwiftUI 처럼 사용할 수 있는 DSL"/><meta property="og:description" content="---
+title: TuistUI
+date: 2025-04-08 23:29
+tags: Swift, Tuist, Plugin, Tuistui
+image: thumbnail/tuistui.svg
+description: Tuist를 SwiftUI 처럼 사용할 수 있는 DSL"/><meta name="twitter:card" content="summary_large_image"/><link rel="canonical" href="https://jihoon.me"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@4"/><link rel="stylesheet" href="/global.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico" type="/image/png"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to TuistUI"/></head><body><header class="fixed top-8 left-0 right-0 flex justify-between items-center px-6 max-w-2xl mx-auto z-99"><nav class="flex space-x-3 header-container"><div class="tooltip-container relative group" style=".tooltip-container:hover .tooltip { opacity: 1; visibility: visible; }"><a href="/" class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18.3966 9.54817L12.3966 5.42317C12.1577 5.25894 11.8423 5.25894 11.6034 5.42317L5.60343 9.54817L4.86694 8.47692L10.8669 4.35192C11.5494 3.88269 12.4506 3.88269 13.1331 4.35192L19.1331 8.47692C19.6758 8.85003 20 9.46641 20 10.125V17.0729C20 18.7298 18.6569 20.0729 17 20.0729H14.5C13.9477 20.0729 13.5 19.6252 13.5 19.0729V16.0729C13.5 15.5207 13.0523 15.0729 12.5 15.0729H11.5C10.9477 15.0729 10.5 15.5207 10.5 16.0729V19.0729C10.5 19.6252 10.0523 20.0729 9.5 20.0729H7C5.34315 20.0729 4 18.7298 4 17.0729V10.125C4 9.46641 4.32423 8.85003 4.86694 8.47692L5.60343 9.54817C5.41348 9.67876 5.3 9.89449 5.3 10.125V17.0729C5.3 18.0118 6.06112 18.7729 7 18.7729H9.2V16.0729C9.2 14.8027 10.2297 13.7729 11.5 13.7729H12.5C13.7703 13.7729 14.8 14.8027 14.8 16.0729V18.7729H17C17.9389 18.7729 18.7 18.0118 18.7 17.0729V10.125C18.7 9.89449 18.5865 9.67876 18.3966 9.54817Z" fill="currentColor"></path></svg></a><div class="tooltip absolute z-50 px-3 py-2 text-sm text-neutral-100 bg-neutral-900 border border-neutral-700 rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 pointer-events-none whitespace-nowrap top-full left-1/2 transform -translate-x-1/2 mt-3" style="transition-delay: 200ms;">Index</div></div><div class="tooltip-container relative group" style=".tooltip-container:hover .tooltip { opacity: 1; visibility: visible; }"><a href="/posts" class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.2929 19.7071C12.1054 19.8946 11.851 20 11.5858 20H5.9994C4.89483 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H18C19.1046 4 20 4.89543 20 6V11.5858C20 11.851 19.8946 12.1054 19.7071 12.2929L12.2929 19.7071ZM18.45 11.35C18.5881 11.35 18.7 11.2381 18.7 11.1V6C18.7 5.6134 18.3866 5.3 18 5.3H6C5.6134 5.3 5.3 5.6134 5.3 6V18C5.3 18.3871 5.61331 18.7 5.9994 18.7H11.1C11.2381 18.7 11.35 18.5881 11.35 18.45V13.9994C11.35 12.5356 12.5367 11.35 14 11.35H18.45ZM13.0768 17.0847C12.9193 17.2422 12.65 17.1307 12.65 16.908V13.9994C12.65 13.2541 13.2542 12.65 14 12.65H16.908C17.1307 12.65 17.2422 12.9193 17.0847 13.0768L13.0768 17.0847Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path></svg></a><div class="tooltip absolute z-50 px-3 py-2 text-sm text-neutral-100 bg-neutral-900 border border-neutral-700 rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 pointer-events-none whitespace-nowrap top-full left-1/2 transform -translate-x-1/2 mt-3" style="transition-delay: 200ms;">Posts</div></div><div class="tooltip-container relative group" style=".tooltip-container:hover .tooltip { opacity: 1; visibility: visible; }"><a href="/about" class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.2513 12C17.7695 12 19.0483 13.2762 18.4673 14.6788C18.1156 15.5281 17.5999 16.2997 16.9499 16.9497C16.2999 17.5998 15.5282 18.1154 14.679 18.4672C13.8297 18.8189 12.9194 19 12.0002 19C11.0809 19 10.1707 18.8189 9.32139 18.4672C8.47212 18.1154 7.70044 17.5998 7.05043 16.9497C6.40042 16.2997 5.8848 15.5281 5.53302 14.6788C4.95205 13.2762 6.23089 12 7.74905 12L16.2513 12ZM16.0307 16.0305C16.56 15.5012 16.9798 14.8729 17.2663 14.1813C17.3167 14.0597 17.3152 13.9764 17.3038 13.9178C17.291 13.8525 17.255 13.7678 17.1723 13.6742C16.9971 13.476 16.6608 13.3 16.2513 13.3H7.74905C7.33956 13.3 7.00324 13.476 6.82801 13.6742C6.74531 13.7678 6.70931 13.8525 6.69656 13.9178C6.68511 13.9764 6.6837 14.0597 6.73406 14.1813C7.02052 14.8729 7.44038 15.5012 7.96967 16.0305C8.49896 16.5598 9.12733 16.9797 9.81888 17.2661C10.5104 17.5526 11.2516 17.7 12.0002 17.7C12.7487 17.7 13.4899 17.5526 14.1815 17.2661C14.873 16.9797 15.5014 16.5598 16.0307 16.0305Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path><path d="M10.6909 10.7C9.69009 10.2138 9.00018 9.18746 9.00018 8C9.00018 6.34315 10.3433 5 12.0002 5C13.657 5 15.0002 6.34315 15.0002 8C15.0002 9.18746 14.3103 10.2138 13.3094 10.7C12.9138 10.8922 12.4696 11 12.0002 11C11.5308 11 11.0866 10.8922 10.6909 10.7ZM12.0002 9.7C12.9391 9.7 13.7002 8.93888 13.7002 8C13.7002 7.06112 12.9391 6.3 12.0002 6.3C11.0613 6.3 10.3002 7.06112 10.3002 8C10.3002 8.93888 11.0613 9.7 12.0002 9.7Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path></svg></a><div class="tooltip absolute z-50 px-3 py-2 text-sm text-neutral-100 bg-neutral-900 border border-neutral-700 rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 pointer-events-none whitespace-nowrap top-full left-1/2 transform -translate-x-1/2 mt-3" style="transition-delay: 200ms;">About</div></div></nav><div class="header-container"><button class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12" onclick="document.querySelector('#docsearch button').click()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.0155 13.9887C13.0105 13.9925 13.0055 13.9962 13.0005 14C12.1647 14.6279 11.1258 15 10 15C7.23858 15 5 12.7614 5 10C5 7.23858 7.23858 5 10 5C12.7614 5 15 7.23858 15 10C15 11.1326 14.6234 12.1772 13.9887 13.0155L17.3795 16.4063C17.4563 16.483 17.5458 16.5834 17.6325 16.6971L17.6426 16.7105C17.9182 17.076 18.1597 17.5725 17.8661 17.8661C17.5725 18.1597 17.076 17.9182 16.7105 17.6426L16.6971 17.6325C16.5834 17.5458 16.483 17.4563 16.4063 17.3795L13.0155 13.9887ZM10 13.7C7.95655 13.7 6.3 12.0435 6.3 10C6.3 7.95655 7.95655 6.3 10 6.3C12.0435 6.3 13.7 7.95655 13.7 10C13.7 11.2095 13.121 12.2834 12.2196 12.9607C11.6013 13.4252 10.8346 13.7 10 13.7Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path></svg></button></div><div id="docsearch" class="hidden"></div><script src="https://cdn.jsdelivr.net/npm/@docsearch/js@4"></script><script type="text/javascript" src="/scripts/docsearch.js"></script></header><main class="min-h-screen pb-24 pt-32"><div><div class="px-6 mx-auto max-w-2xl"><div class="flex gap-3 mb-8"><div class="bg-black rounded-full border border-neutral-800 p-2"><a href="/posts" class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.7842 18.9812C16.9566 19.2294 16.9373 19.5732 16.7207 19.8005C16.473 20.0602 16.0614 20.0694 15.8016 19.822L8.27883 12.6521C7.9304 12.3197 7.90845 11.7773 8.21339 11.4187L8.27883 11.3494L15.8016 4.17945L15.9051 4.09839C16.1614 3.93796 16.5039 3.97459 16.7207 4.20191C16.9369 4.42919 16.9564 4.77224 16.7842 5.02027L16.6982 5.12086L9.4802 12.0007L16.6982 18.8816L16.7842 18.9812Z" fill="currentColor"></path></svg></a></div></div></div><div class="max-w-2xl mx-auto px-6"><div class="my-5 text-center"><time class="font-regular text-gray-500 text-sm">2025년 4월 8일</time></div><h1 class="text-3xl font-bold mb-4 text-center">TuistUI</h1><p class="text-base leading-relaxed text-center">Tuist를 SwiftUI 처럼 사용할 수 있는 DSL Plugin인 제가 만든 TuistUI를 소개합니다.</p></div><div class="max-w-4xl mx-auto p-6"><figure class="rounded-xl overflow-hidden"><img src="/thumbnail/tuistui.svg" class="p-0 w-full h-full object-cover"/></figure></div><div class="markdown-content mx-auto max-w-2xl px-6 text-left"><h1>TuistUI</h1><p>잠시 군대 복무 때문에 블로그 작성과 활동에 제약(개발 환경 등등)이 생겨서 글을 작성하지 못한 상태였으나, 이제 곧 전역을 준비하며.. 다시 시작 해볼려고 합니다. 이번에는 제가 애정있는 프로젝트이자, 군대에서도 유지보수를 했었고, 외출/외박때도 열심히 기능을 생각하던 애착 프로젝트를 소개할려고 합니다.</p><blockquote><p>TuistUI는 Tuist를 SwiftUI처럼 가독성 있게 사용하기 위해 만든 Tuist DSL Plugin입니다.</p></blockquote><p>TuistUI를 사용하기 위해서는 <code>Config.swift</code> 에 아래 코드를 추가하면 됩니다.</p><pre><code class="language-swift"><span class="token keyword">import</span> ProjectDescription
+
+<span class="token keyword">let</span> config = Config(
+    plugins: [
+        .git(url: <span class="token string">"https://github.com/jihoonme/tuistui"</span>, tag: <span class="token string">"vTAG"</span>)
+    ]
+)
+</code></pre><h2>플러그인 개발 동기</h2><p>아이디어는 SwiftUI를 보면서 하게 되었습니다.</p><p>기존의 Tuist 같은 경우는 <code>Project</code> 생성과 <code>Workspace</code> 생성 부분이 마치 <code>Package.swift</code> 와 비슷하다고 생각이 들었습니다. 하지만 그 스타일에서 벗어나 SwiftUI처럼 한눈에 직관적으로 보이는 느낌으로 만들고 싶었습니다.</p><pre><code class="language-swift"><span class="token keyword">struct</span> BaseView: View {
+	<span class="token keyword">var</span> body: some View {
+		VStack {
+			Text(<span class="token string">"Hello World"</span>)
+		}
+	}
+}
+</code></pre><p>관심있게 보던 프로젝트인 <a href="https://github.com/TokamakUI/Tokamak"><code>Tokamak</code></a> 프로젝트와 <a href="https://github.com/swifweb/web"><code>web</code></a> 그리고 <a href="https://github.com/JohnSundell/Plot"><code>Plot</code></a> 프로젝트를 참고해서 TuistUI의 전체적인 틀을 잡게 되었습니다.</p><h1>어떤 기능을 가지고 있는가</h1><h2>Module 기능</h2><p><code>TuistUI</code>는 Project든 Workspace든 <code>Module</code> 이라는 프로토콜을 상속 받는것으로 시작이 됩니다.</p><pre><code class="language-swift"><span class="token keyword">struct</span> BaseFeature: Module {}
+</code></pre><p>Module을 상속을 받게 되면 SwiftUI 처럼</p><pre><code class="language-swift"><span class="token keyword">struct</span> BaseFeature: Module {
+  <span class="token keyword">var</span> body: some Module {}
+}
+</code></pre><p>body 값을 받을수 있는 프로퍼티가 생성이 됩니다.</p><p>만약에 Project를 고르고 싶다면</p><pre><code class="language-swift"><span class="token keyword">struct</span> BaseFeature: Module {
+	<span class="token keyword">var</span> body: some Module {
+	  Project {}
+	}
+}
+</code></pre><p><code>Module</code>을 상속 받고 있는 <code>Project</code> 를 body 프로퍼티 안에 적어두면 됩니다.</p><p>그 후에 설정할 값들을 넣어주고</p><pre><code class="language-swift"><span class="token keyword">struct</span> BaseFeature: Module {
+    <span class="token keyword">var</span> body: some Module {
+        Project {
+            <span class="token comment">/// Target Code</span>
+        }
+        .organizationName(<span class="token string">""</span>)
+        .package {
+            <span class="token comment">/// Package Code</span>
+        }
+    }
+}
+</code></pre><p>기존 Tuist 의 <code>name:</code> 부분은</p><pre><code class="language-swift"><span class="token keyword">let</span> project = Project(
+	name: <span class="token string">"BaseFeature"</span>
+	...
+)
+</code></pre><p>구조체명을 자동적으로 가져오게 설정해뒀습니다.</p><p><code>Project.swift</code> 파일에 아래 코드만 추가해주시면 됩니다.</p><pre><code class="language-swift"><span class="token keyword">let</span> project = BaseFeature().module()
+</code></pre><p>그리고 <code>Workspace</code> 같은 경우도 똑같이 생성이 됩니다.</p><p>Module 안에 Workspace에 필요한 값을 넣어주고</p><pre><code class="language-swift"><span class="token keyword">struct</span> TuistApp: Module {
+    <span class="token keyword">var</span> body: some Module {
+        Workspace {
+            Path.relativeToRoot(<span class="token string">"Projects/App"</span>)
+        }
+        .scheme {
+            <span class="token comment">/// Scheme Code</span>
+        }
+    }
+}
+</code></pre><p><code>Workspace.swift</code> 파일 안에 위 코드만 추가하면 됩니다.</p><pre><code class="language-swift"><span class="token keyword">let</span> workspace = TuistApp().module()
+</code></pre><h2>Constant 값 관리</h2><p>SwiftUI에서 <code>@EnvironmentObject</code> 와 <code>ObservableObject</code> 부분을 보고 공통된 Constant를 관리해줄수 있는 공간이 있다면 괜찮을거 같다는 생각을 가지게 되어서 만들게 되었습니다.</p><p><code>ModuleObject</code>라는 프로토콜을 만들었고, 그곳 내부에서 Module 에서 사용되는 값들을 전체적으로 관리할수 있도록 구성했습니다.</p><pre><code class="language-swift"><span class="token keyword">struct</span> AppEnvironment: ModuleObject {
+    <span class="token keyword">static</span> <span class="token keyword">let</span> organizationName: String = <span class="token string">"jihoonme"</span>
+    <span class="token keyword">static</span> <span class="token keyword">let</span> destinations: Destinations = .iOS
+    <span class="token keyword">static</span> <span class="token keyword">let</span> deploymentTargets: DeploymentTargets = .iOS(<span class="token string">"15.0"</span>)
+}
+</code></pre><p>그리고 SwiftUI에서 <code>@EnvironmentObject</code> 가 존재하듯 <code>@Constant</code> 라는 propertywrapper를 Module내부에 추가해주시면 값들을 편리하게 사용할 수 있습니다.</p><pre><code class="language-swift"><span class="token keyword">struct</span> BaseProject: Module {
+    @Constant <span class="token keyword">var</span> env = AppEnvironment()
+
+    <span class="token keyword">var</span> body: Module {
+        Project {
+            <span class="token comment">// Target</span>
+        }
+        .organizationName(env.organizationName)
+    }
+}
+</code></pre><h2>Configuration 기능</h2><p>마지막으로 고민했던 부분은 Configuration관련 내용입니다. TuistUI를 확장하며, Configuration 기능에 좀 <code>TCA</code> 처럼 정규화된 코드를 작성하면 이 플러그인만 가져오면 관리를 편하게 할 수 있겠다고 생각하게 되었습니다.</p><p>그래서 <code>TCA</code> 의 <code>Reducer</code> 스타일을 살짝 빌려서</p><pre><code class="language-swift"><span class="token keyword">struct</span> AppConfiguration: XCConfig {
+
+    <span class="token keyword">enum</span> XCConfigTarget: String, XCConfigTargetType {
+        <span class="token keyword">case</span> baseProject
+
+        <span class="token keyword">var</span> path: Path {
+            <span class="token keyword">switch</span> <span class="token keyword">self</span> {
+            <span class="token keyword">case</span> .baseProject:
+                <span class="token keyword">return</span> .relativeToRoot(<span class="token string">"XCConfig/baseProject"</span>)
+            }
+        }
+    }
+
+    <span class="token keyword">var</span> body: some XCConfigOf&lt;Self&gt; {
+        Configure ({
+            <span class="token keyword">switch</span> $<span class="token number">0</span> {
+            <span class="token keyword">case</span> .baseProject:
+                <span class="token keyword">return</span> [
+                    <span class="token comment">// Write Configuration Method</span>
+                ]
+            }
+        })
+    }
+}
+</code></pre><p><code>XCConfigTarget</code>을 지정하고 body 프로퍼티에서 Configuration Method를 관리해줄수 있도록 만들었습니다.</p><pre><code class="language-swift"><span class="token keyword">var</span> body: some XCConfigOf&lt;Self&gt; {
+    Configure ({
+        <span class="token keyword">switch</span> $<span class="token number">0</span> {
+        <span class="token keyword">case</span> .A:
+            <span class="token keyword">return</span> [
+                .debug(into: $<span class="token number">0</span>, name: .dev)
+                .release(into: $<span class="token number">0</span>, name: .prod)
+            ]
+        }
+    })
+}
+</code></pre><p>이렇게 추가하고</p><pre><code class="language-swift"><span class="token keyword">struct</span> BaseProject: Module {
+    <span class="token keyword">let</span> config = AppConfiguration()
+
+    <span class="token keyword">var</span> body: Module {
+        Project {
+            <span class="token comment">// Target</span>
+        }
+        .settings(
+            .settings(
+                configurations: config.configure(into: .baseProject)
+            )
+        )
+    }
+}
+</code></pre><p>settings 부분에서 configurations를 추가하면 보기 좋게 관리 할수 있도록 만들었습니다.</p><h2>고민했던 부분</h2><p>플러그인 개발을 진행하면서 이런 부분은 고민을 많이 했습니다.</p><ul><li>Templates 제공 때 어떻게 제공하는게 좋을지</li><li>Moduler Architecture 부분까지 제공을 할지</li></ul><p>위 두가지 고민이 저에게 가장 큰 고민이였습니다.</p><h3>Templates 제공 때 어떻게 제공하는게 좋을지</h3><p>이 부분은 생각보다 고민시간이 많이 걸렸습니다. 기존 대부분의 Templates 처럼 그냥 <code>Project.swift</code> 랑 <code>Workspace.swift</code> 파일을 생성하게 만들려고 했지만, <code>ProjectDescriptionHelpers</code> 부분에 초점을 두게 되었습니다.</p><p>실질적으로 <code>Module</code> 부분은 Project를 Description 해주는 부분이라고 생각이 들었습니다.</p><pre><code class="language-swift"><span class="token keyword">struct</span> BaseFeature: Module {
+    <span class="token keyword">var</span> body: some Module {
+        Project {
+            <span class="token comment">/// Target Code</span>
+        }
+        .organizationName(<span class="token string">""</span>)
+        .package {
+            <span class="token comment">/// Package Code</span>
+        }
+    }
+}
+</code></pre><p>사실상 Project는 <code>Project.swift</code> 라는 부분에서 하는 역할은</p><pre><code class="language-swift"><span class="token keyword">let</span> project = BaseFeature().module()
+</code></pre><p>생성에 관련된 코드는 이 부분이 하고 있기 때문에 프로젝트 생성을 했을때 <code>Project.swift</code> 보다는 <code>ProjectDescriptionHelper</code> 에 생성되는게 더 의미가 맞겠다라고 생각을 해서</p><p>Project Template를 생성해주면</p><pre><code>.
+├── Projects
+│   └── App
+│     └── Project.swift //&lt;- Project.swift file Generate
+├── Tuist
+│   ├── ProjectDescriptionHelpers
+│     └── Projects
+│       └── DemoProject.swift //&lt;- DemoProject.swift file Generate
+│   ├── Dependencies.swift
+│   ├── Config.swift
+│   └── Package.swift
+└── [README.md](http://readme.md/)
+</code></pre><p>이렇게 생성이 되며</p><p>Workspace도 마찬가지로 Template를 생성해주면</p><pre><code>.
+├── Projects
+│   └── App
+│     └── Workspace.swift //&lt;- Workspace.swift file Generate
+├── Tuist
+│   ├── ProjectDescriptionHelpers
+│     └── Workspace
+│       └── DemoApp.swift //&lt;- DemoApp.swift file Generate
+│   ├── Dependencies.swift
+│   ├── Config.swift
+│   └── Package.swift
+└── README.md
+</code></pre><p>이렇게 생성되게 만들어뒀습니다.</p><h3>Moduler Architecture 부분까지 제공을 할지</h3><p>이부분은 기존에 또다른 플러그인인 <a href="https://github.com/jihoonahn/microfeature">microfeature</a> 플러그인을 만들어보며 또 다른 플러그인으로 제공을 하게되면</p><p>microfeature plugin 코드중</p><pre><code class="language-swift"><span class="token keyword">struct</span> ExampleModule: Module {
+    <span class="token keyword">var</span> body: some Module {
+        Project {
+            Microfeature {
+                Example(name: typeName)
+                Interface(name: typeName)
+                Sources(name: typeName)
+                Testing(name: typeName)
+                UnitTests(name: typeName)
+                UITests(name: typeName)
+            }
+        }
+    }
+}
+</code></pre><p>이렇게 Microfeature라는 Method로 감싸야되는 상황이 나오게 됬습니다.</p><pre><code class="language-swift"><span class="token keyword">public</span> <span class="token keyword">func</span> Microfeature(@TargetBuilder content: () -&gt; [Target]) -&gt; [Target] {
+    <span class="token keyword">return</span> content()
+}
+</code></pre><p>Microfeature 플러그인을 제작할때 TuistUI를 가져올수 없기 때문에 발생하는 사소한 부분이였기 때문에 플러그인으로 가져오는건 비 효율적이라고 생각이 들었고,</p><p><strong>TuistUI 내부에서 Moduler Architecture를 넣어둔다면?</strong></p><p>이부분은 또 다른 모듈을 관리하는 Architecture가 나올수 있다는 것을 가정하에 제외하게 되었습니다. (TuistUI가 Modular Architecture 하나로만 제한되는 상황을 방지하기 위함입니다.)</p><h2>향후 개발 계획</h2><p>현재는 넘어가서 전역 후 <a href="https://github.com/jihoonme/designtuist">DesignTuist</a> 에서 TuistUI 플러그인을 사용하며, 필요한 부분과 개선할 부분을 찾아볼 생각이고</p><p>추가적으로 이런 부분 추가하면 좋겠다 생각되시는 부분은 <a href="https://github.com/jihoonme/tuistui/issues">issue</a>로 남겨주시면 열심히 추가해보겠습니다!</p><p><a href="https://github.com/jihoonme/tuistui">https://github.com/jihoonme/tuistui</a></p></div><div class="max-w-2xl mx-auto px-6"><div class="flex flex-col gap-4 px-4 mt-11 mb-4 max-w-3xl mx-auto md:flex-row md:px-0 md:gap-8"><div class="min-w-0 flex-1"><a href="/posts/letswift-2023" class="flex cursor-pointer items-center w-full h-full"><div class="p-4 w-full h-full rounded-lg bg-black border border-neutral-800 hover:border-neutral-600 hover:shadow-sm transition-all duration-200 cursor-pointer"><p class="text-sm text-gray-500 mb-2">Preview Post</p><h3 class="text-2xl font-semibold text-neutral-300 hover:text-white transition-colors">LetSwift 2023 회고록</h3></div></a></div><div class="min-w-0 flex-1"><a href="/posts/swift-layout" class="flex cursor-pointer items-center w-full h-full"><div class="p-4 w-full h-full rounded-lg bg-black border border-neutral-800 hover:border-neutral-600 hover:shadow-sm transition-all duration-200 cursor-pointer text-right"><p class="text-sm text-gray-500 mb-2 text-right">Next Post</p><h3 class="text-2xl font-semibold text-neutral-300 hover:text-white transition-colors">Swift Layout 제작기</h3></div></a></div></div></div></div><script>document.addEventListener('DOMContentLoaded', function() {
+    var viewport = document.querySelector('.screen-carousel-viewport');
+    var strip = document.getElementById('screen-carousel-strip');
+    var dots = document.querySelectorAll('.screen-carousel-dot');
+    if (viewport &amp;&amp; strip &amp;&amp; dots.length) {
+        function goTo(i) {
+            var w = viewport.offsetWidth;
+            viewport.scrollLeft = i * w;
+            dots.forEach(function(d, j) {
+                d.classList.toggle('is-active', j === i);
+            });
+        }
+        dots.forEach(function(dot, i) {
+            dot.addEventListener('click', function() { goTo(i); });
+        });
+        viewport.addEventListener('scroll', function() {
+            var i = Math.round(viewport.scrollLeft / viewport.offsetWidth);
+            i = Math.max(0, Math.min(i, dots.length - 1));
+            dots.forEach(function(d, j) { d.classList.toggle('is-active', j === i); });
+        });
+    }
+    var codeBlocks = document.querySelectorAll('.markdown-content pre');
+    codeBlocks.forEach(function(pre) {
+        var copyButton = document.createElement('button');
+        copyButton.textContent = 'Copy';
+        copyButton.className = 'copy-code-button';
+        copyButton.addEventListener('click', function() {
+            var codeElement = pre.querySelector('code');
+            var codeText = codeElement ? codeElement.textContent : pre.textContent;
+            navigator.clipboard.writeText(codeText).then(function() {
+                copyButton.textContent = 'Copied!';
+                setTimeout(function() { copyButton.textContent = 'Copy'; }, 1500);
+            }).catch(function() {
+                var textArea = document.createElement('textarea');
+                textArea.value = codeText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                copyButton.textContent = 'Copied!';
+                setTimeout(function() { copyButton.textContent = 'Copy'; }, 1500);
+            });
+        });
+        pre.appendChild(copyButton);
+    });
+});</script></main><footer class="left-0 right-0 flex justify-center items-center px-6 my-10 max-w-4xl mx-auto"><div class="flex flex-row justify-center items-center px-4 py-2 rounded-full border border-neutral-800 bg-neutral-900/90 backdrop-blur-sm"><p class="text-neutral-400 text-sm">© 2025 jihoon.me. All rights reserved.</p></div></footer></body></html>

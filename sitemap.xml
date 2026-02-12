@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+    <loc>https://jihoon.me</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/404.html</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/posts</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/posts/page/2</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/projects</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/about</loc>
+    <lastmod>2026-02-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/posts/what-is-swiftui</loc>
+    <lastmod>2022-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/posts/swift-layout</loc>
+    <lastmod>2025-12-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/posts/actor</loc>
+    <lastmod>2026-02-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/posts/letswift-2023</loc>
+    <lastmod>2023-12-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/posts/publish-part-1</loc>
+    <lastmod>2023-09-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/posts/publish-introduce</loc>
+    <lastmod>2023-08-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/posts/universal-framework</loc>
+    <lastmod>2023-04-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/posts/publish-part-2</loc>
+    <lastmod>2023-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/posts/swift-concurrency</loc>
+    <lastmod>2026-02-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/posts/publish-part-3</loc>
+    <lastmod>2023-11-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/posts/yackety-yak-ios-4</loc>
+    <lastmod>2023-02-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/posts/swiftui-need-mvvm</loc>
+    <lastmod>2022-09-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/posts/scade-introduce</loc>
+    <lastmod>2023-03-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/posts/tuist-xcodebeta</loc>
+    <lastmod>2023-06-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/posts/iga-ios-1</loc>
+    <lastmod>2023-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/posts/tuistui</loc>
+    <lastmod>2025-04-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+</url>
+<url>
+    <loc>https://jihoon.me/posts/what-is-swift</loc>
+    <lastmod>2021-04-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+</url>
+</urlset>

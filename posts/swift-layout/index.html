@@ -1,0 +1,156 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"/><meta property="og:site_name" content="Swift Layout 제작기"/><link rel="canonical" href="https://jihoon.me"/><meta name="twitter:url" content="https://jihoon.me"/><meta property="og:url" content="https://jihoon.me"/><title>Swift Layout 제작기</title><meta name="twitter:title" content="Swift Layout 제작기"/><meta property="og:title" content="Swift Layout 제작기"/><meta name="description" content="---
+title: Swift Layout 제작기
+date: 2025-12-15 11:00
+tags: Swift, Layout, SwiftUI DSL, Manual-Layout
+image: thumbnail/swift-layout.svg
+description: UIKi"/><meta name="twitter:description" content="---
+title: Swift Layout 제작기
+date: 2025-12-15 11:00
+tags: Swift, Layout, SwiftUI DSL, Manual-Layout
+image: thumbnail/swift-layout.svg
+description: UIKi"/><meta property="og:description" content="---
+title: Swift Layout 제작기
+date: 2025-12-15 11:00
+tags: Swift, Layout, SwiftUI DSL, Manual-Layout
+image: thumbnail/swift-layout.svg
+description: UIKi"/><meta name="twitter:card" content="summary_large_image"/><link rel="canonical" href="https://jihoon.me"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@4"/><link rel="stylesheet" href="/global.css" type="text/css"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/><link rel="shortcut icon" href="/favicon.ico" type="/image/png"/><link rel="alternate" href="/feed.rss" type="application/rss+xml" title="Subscribe to Swift Layout 제작기"/></head><body><header class="fixed top-8 left-0 right-0 flex justify-between items-center px-6 max-w-2xl mx-auto z-99"><nav class="flex space-x-3 header-container"><div class="tooltip-container relative group" style=".tooltip-container:hover .tooltip { opacity: 1; visibility: visible; }"><a href="/" class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M18.3966 9.54817L12.3966 5.42317C12.1577 5.25894 11.8423 5.25894 11.6034 5.42317L5.60343 9.54817L4.86694 8.47692L10.8669 4.35192C11.5494 3.88269 12.4506 3.88269 13.1331 4.35192L19.1331 8.47692C19.6758 8.85003 20 9.46641 20 10.125V17.0729C20 18.7298 18.6569 20.0729 17 20.0729H14.5C13.9477 20.0729 13.5 19.6252 13.5 19.0729V16.0729C13.5 15.5207 13.0523 15.0729 12.5 15.0729H11.5C10.9477 15.0729 10.5 15.5207 10.5 16.0729V19.0729C10.5 19.6252 10.0523 20.0729 9.5 20.0729H7C5.34315 20.0729 4 18.7298 4 17.0729V10.125C4 9.46641 4.32423 8.85003 4.86694 8.47692L5.60343 9.54817C5.41348 9.67876 5.3 9.89449 5.3 10.125V17.0729C5.3 18.0118 6.06112 18.7729 7 18.7729H9.2V16.0729C9.2 14.8027 10.2297 13.7729 11.5 13.7729H12.5C13.7703 13.7729 14.8 14.8027 14.8 16.0729V18.7729H17C17.9389 18.7729 18.7 18.0118 18.7 17.0729V10.125C18.7 9.89449 18.5865 9.67876 18.3966 9.54817Z" fill="currentColor"></path></svg></a><div class="tooltip absolute z-50 px-3 py-2 text-sm text-neutral-100 bg-neutral-900 border border-neutral-700 rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 pointer-events-none whitespace-nowrap top-full left-1/2 transform -translate-x-1/2 mt-3" style="transition-delay: 200ms;">Index</div></div><div class="tooltip-container relative group" style=".tooltip-container:hover .tooltip { opacity: 1; visibility: visible; }"><a href="/posts" class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12.2929 19.7071C12.1054 19.8946 11.851 20 11.5858 20H5.9994C4.89483 20 4 19.1046 4 18V6C4 4.89543 4.89543 4 6 4H18C19.1046 4 20 4.89543 20 6V11.5858C20 11.851 19.8946 12.1054 19.7071 12.2929L12.2929 19.7071ZM18.45 11.35C18.5881 11.35 18.7 11.2381 18.7 11.1V6C18.7 5.6134 18.3866 5.3 18 5.3H6C5.6134 5.3 5.3 5.6134 5.3 6V18C5.3 18.3871 5.61331 18.7 5.9994 18.7H11.1C11.2381 18.7 11.35 18.5881 11.35 18.45V13.9994C11.35 12.5356 12.5367 11.35 14 11.35H18.45ZM13.0768 17.0847C12.9193 17.2422 12.65 17.1307 12.65 16.908V13.9994C12.65 13.2541 13.2542 12.65 14 12.65H16.908C17.1307 12.65 17.2422 12.9193 17.0847 13.0768L13.0768 17.0847Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path></svg></a><div class="tooltip absolute z-50 px-3 py-2 text-sm text-neutral-100 bg-neutral-900 border border-neutral-700 rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 pointer-events-none whitespace-nowrap top-full left-1/2 transform -translate-x-1/2 mt-3" style="transition-delay: 200ms;">Posts</div></div><div class="tooltip-container relative group" style=".tooltip-container:hover .tooltip { opacity: 1; visibility: visible; }"><a href="/about" class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.2513 12C17.7695 12 19.0483 13.2762 18.4673 14.6788C18.1156 15.5281 17.5999 16.2997 16.9499 16.9497C16.2999 17.5998 15.5282 18.1154 14.679 18.4672C13.8297 18.8189 12.9194 19 12.0002 19C11.0809 19 10.1707 18.8189 9.32139 18.4672C8.47212 18.1154 7.70044 17.5998 7.05043 16.9497C6.40042 16.2997 5.8848 15.5281 5.53302 14.6788C4.95205 13.2762 6.23089 12 7.74905 12L16.2513 12ZM16.0307 16.0305C16.56 15.5012 16.9798 14.8729 17.2663 14.1813C17.3167 14.0597 17.3152 13.9764 17.3038 13.9178C17.291 13.8525 17.255 13.7678 17.1723 13.6742C16.9971 13.476 16.6608 13.3 16.2513 13.3H7.74905C7.33956 13.3 7.00324 13.476 6.82801 13.6742C6.74531 13.7678 6.70931 13.8525 6.69656 13.9178C6.68511 13.9764 6.6837 14.0597 6.73406 14.1813C7.02052 14.8729 7.44038 15.5012 7.96967 16.0305C8.49896 16.5598 9.12733 16.9797 9.81888 17.2661C10.5104 17.5526 11.2516 17.7 12.0002 17.7C12.7487 17.7 13.4899 17.5526 14.1815 17.2661C14.873 16.9797 15.5014 16.5598 16.0307 16.0305Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path><path d="M10.6909 10.7C9.69009 10.2138 9.00018 9.18746 9.00018 8C9.00018 6.34315 10.3433 5 12.0002 5C13.657 5 15.0002 6.34315 15.0002 8C15.0002 9.18746 14.3103 10.2138 13.3094 10.7C12.9138 10.8922 12.4696 11 12.0002 11C11.5308 11 11.0866 10.8922 10.6909 10.7ZM12.0002 9.7C12.9391 9.7 13.7002 8.93888 13.7002 8C13.7002 7.06112 12.9391 6.3 12.0002 6.3C11.0613 6.3 10.3002 7.06112 10.3002 8C10.3002 8.93888 11.0613 9.7 12.0002 9.7Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path></svg></a><div class="tooltip absolute z-50 px-3 py-2 text-sm text-neutral-100 bg-neutral-900 border border-neutral-700 rounded-lg shadow-lg opacity-0 invisible transition-all duration-200 pointer-events-none whitespace-nowrap top-full left-1/2 transform -translate-x-1/2 mt-3" style="transition-delay: 200ms;">About</div></div></nav><div class="header-container"><button class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12" onclick="document.querySelector('#docsearch button').click()"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M13.0155 13.9887C13.0105 13.9925 13.0055 13.9962 13.0005 14C12.1647 14.6279 11.1258 15 10 15C7.23858 15 5 12.7614 5 10C5 7.23858 7.23858 5 10 5C12.7614 5 15 7.23858 15 10C15 11.1326 14.6234 12.1772 13.9887 13.0155L17.3795 16.4063C17.4563 16.483 17.5458 16.5834 17.6325 16.6971L17.6426 16.7105C17.9182 17.076 18.1597 17.5725 17.8661 17.8661C17.5725 18.1597 17.076 17.9182 16.7105 17.6426L16.6971 17.6325C16.5834 17.5458 16.483 17.4563 16.4063 17.3795L13.0155 13.9887ZM10 13.7C7.95655 13.7 6.3 12.0435 6.3 10C6.3 7.95655 7.95655 6.3 10 6.3C12.0435 6.3 13.7 7.95655 13.7 10C13.7 11.2095 13.121 12.2834 12.2196 12.9607C11.6013 13.4252 10.8346 13.7 10 13.7Z" fill-rule="evenodd" clip-rule="evenodd" fill="currentColor"></path></svg></button></div><div id="docsearch" class="hidden"></div><script src="https://cdn.jsdelivr.net/npm/@docsearch/js@4"></script><script type="text/javascript" src="/scripts/docsearch.js"></script></header><main class="min-h-screen pb-24 pt-32"><div><div class="px-6 mx-auto max-w-2xl"><div class="flex gap-3 mb-8"><div class="bg-black rounded-full border border-neutral-800 p-2"><a href="/posts" class="flex items-center justify-center hover:bg-neutral-800 hover:text-neutral-400 rounded-full transition-colors duration-200 text-neutral-600 w-12 h-12"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M16.7842 18.9812C16.9566 19.2294 16.9373 19.5732 16.7207 19.8005C16.473 20.0602 16.0614 20.0694 15.8016 19.822L8.27883 12.6521C7.9304 12.3197 7.90845 11.7773 8.21339 11.4187L8.27883 11.3494L15.8016 4.17945L15.9051 4.09839C16.1614 3.93796 16.5039 3.97459 16.7207 4.20191C16.9369 4.42919 16.9564 4.77224 16.7842 5.02027L16.6982 5.12086L9.4802 12.0007L16.6982 18.8816L16.7842 18.9812Z" fill="currentColor"></path></svg></a></div></div></div><div class="max-w-2xl mx-auto px-6"><div class="my-5 text-center"><time class="font-regular text-gray-500 text-sm">2025년 12월 15일</time></div><h1 class="text-3xl font-bold mb-4 text-center">Swift Layout 제작기</h1><p class="text-base leading-relaxed text-center">UIKit 기반 Manual Layout을 사용하는 SwiftUI DSL 라이브러리 제작기 입니다.</p></div><div class="max-w-4xl mx-auto p-6"><figure class="rounded-xl overflow-hidden"><img src="/thumbnail/swift-layout.svg" class="p-0 w-full h-full object-cover"/></figure></div><div class="markdown-content mx-auto max-w-2xl px-6 text-left"><h2>Layout 제작기</h2><p>iOS 를 공부하며, 2022년도 부터 고민한 내용입니다. 저는 Snapkit, PinLayout, FlexLayout.. 등등 여러가지 라이브러리를 사용하여 UI의 Layout을 작성해왔습니다. 그러다가 하이퍼 커넥트의 <a href="https://github.com/hyperconnect/HypeUI">HypeUI</a> 라는 라이브러리를 보았습니다.</p><p>기존 UIKit에서 많이 사용되는 Snapkit과 PinLayout의 예시를 보면</p><ul><li>Snapkit</li></ul><pre><code class="language-swift">viewA.snp.makeConstraints { (make) -&gt; Void in
+    make.width.height.equalTo(<span class="token number">50</span>)
+    make.center.equalTo(<span class="token keyword">self</span>.view)
+}
+</code></pre><ul><li>PinLayout</li></ul><pre><code class="language-swift">viewA.pin.top(<span class="token number">10</span>).bottom(<span class="token number">10</span>).<span class="token keyword">left</span>(<span class="token number">10</span>).<span class="token keyword">right</span>(<span class="token number">10</span>)
+</code></pre><p>사실 두가지도 Auto Layout과 Manual Layout으로 동작 방식 부터 차이가 있지만 생산성 측면으로 일단 이야기 하겠습니다.</p><pre><code class="language-swift">ZStack {
+    HStack(alinement: .center, spacing: <span class="token number">4</span>) {
+        Image(Asset.icStar.image)
+            .frame(width: <span class="token number">12</span>, height: <span class="token number">12</span>)
+        Text()
+            .foregroundColor(UIColor.black)
+            .font(UIFont.systemFont(ofSize: <span class="token number">14</span>, weight: .regular))
+        Spacer()
+    }
+    VStack {
+        Text()
+            .foregroundColor(UIColor.black)
+            .font(UIFont.systemFont(ofSize: <span class="token number">14</span>, weight: .regular))
+        Spacer()
+    }
+}
+</code></pre><p>HypeUI는 SwiftUI의 스타일을 AutoLayout에 입히므로써 생산성을 극도로 높힙니다.</p><p>그러다 문뜩 그 생각이 들었습니다</p><p>왜 SwiftUI 의 생산성과, Manual Layout의 성능을 둘다 챙길수 있다면 두마리의 토끼를 다 잡을수 있지 않을까? 라고 머리에서 생각이 들었습니다.</p><h3>Auto Layout과 Manual Layout은 어째서 성능이 차이가 날까</h3><p><strong>Auto Layout</strong>은 기존에 Constraint Resolver 라는 계산 엔진을 사용합니다. 이 Constraint Resolver는 Auto Layout의 Constraint(제약사항을) 만족하도록 Frame을 계산하는 방식이고</p><pre><code>1. Constraints 수집
+2. 시스템 제약 추가
+3. 우선순위 정렬
+4. 선형 방정식 시스템 생성
+5. Solver 실행
+6. Frame 계산
+7. layoutSubviews() 호출
+</code></pre><p>이러한 흐름을 거쳐서 Auto Layout이 실행이 됩니다.</p><p>Auto Layout같은 경우는 Solver를 실행할때 많은 CPU 비용이 발생하게 됩니다.</p><p><strong>Manual Layout</strong></p><p>Manual Layout은 Constraints 수집, Priority 정렬등 AutoLayout에서 해주는 기본적인 계산 로직이 빠지고 오로지 개발자가 Frame으로 값을 계산해서 대입을 합니다.</p><p>사실상 복잡한 레이아웃의 계산 로직을 모두 제거 했기 때문에 CPU, 메모리, 속도 모두 잡은 오로지 최적화된 로직을 작성할수 있습니다.</p><h3>Layout 라이브러리 소개</h3><p>본격적으로 제가 만든 Layout에 대한 동작방식부터 자세히 설명드리도록 하겠습니다. 저는 Manual Layout에서 SwiftUI의 생산성을 가지게 하기 위해서 <a href="https://github.com/pelagornis/swift-layout.git">Layout</a> 이라는 라이브러리를 제작하였습니다.</p><p>Layout은 SwiftUI DSL하여 SwiftUI가 익숙한 사람이여도 사용할수 있게 하였고 DSL한 내용을 순차적으로 수학적으로 좌표 계산을 하기 때문에 Manual Layout의 성능도 챙겼습니다.</p><pre><code class="language-swift">@LayoutBuilder
+<span class="token keyword">var</span> body: some Layout {
+    VStack {
+        titleLabel.layout()
+    }
+}
+</code></pre><p>이런식으로 Layout을 작성합니다.</p><pre><code class="language-swift">layoutContainer.setBody { <span class="token keyword">self</span>.body }
+</code></pre><p><code>LayoutContainer</code> 라는 단일 parent를 사용해서 처리를 하고</p><p>Stack 기능은 총 3가지의 Stack을 제공하며 (VStack, HStack, ZStack)</p><pre><code class="language-swift">VStack { ... }
+HStack { ... }
+ZStack { ... }
+</code></pre><p>Stack의 로직은 children view들의 desired size 계산하고 spacing만큼 offset을 누적하며, 최종 positions 결정하여 각각 Frame을 작성하게 설계하였습니다.</p><p>기존 UIStackView와 비슷한 원리지만 constraint solver 없이 순차 계산이 진행을 합니다.</p><p>내부 Layout의 위치를 잡는 방법은</p><pre><code class="language-swift">label.layout()
+    .centerX()
+    .position(y: <span class="token number">20</span>)
+</code></pre><p>이런식으로 Layout에서 자체 제공하는 함수로 진행이 됩니다. (PinLayout을 조금 참고하였습니다.)</p><p>또한 <code>Spacer</code> 기능을 제공합니다.</p><pre><code class="language-swift">Spacer()
+Spacer(minLength: <span class="token number">50</span>)
+</code></pre><p>이런 식으로 SwiftUI와 같은 방식으로 제공됩니다. Layout 프로토콜을 채택하였고, 사실상 Stack 내부에서 남은 영역에 대한 계산을 하여, 공간을 채우는 방식으로 처리를 하였습니다.</p><p>그리고 여러가지 Layout Modifiers를 제공하여 더욱 SwiftUI와 같은 스타일로 개발자의 편의를 추가하였습니다.</p><p><code>size</code></p><pre><code class="language-swift"><span class="token comment">// Fixed size</span>
+myView.layout()
+    .size(width: <span class="token number">200</span>, height: <span class="token number">100</span>)
+
+<span class="token comment">// Width only (height flexible)</span>
+myView.layout()
+    .size(width: <span class="token number">200</span>)
+
+<span class="token comment">// Height only (width flexible)</span>
+myView.layout()
+    .size(height: <span class="token number">50</span>)
+</code></pre><p><code>padding</code></p><pre><code class="language-swift"><span class="token comment">// Uniform padding</span>
+VStack { ... }
+    .padding(<span class="token number">20</span>)
+
+<span class="token comment">// Edge-specific padding</span>
+VStack { ... }
+    .padding(UIEdgeInsets(top: <span class="token number">20</span>, <span class="token keyword">left</span>: <span class="token number">16</span>, bottom: <span class="token number">40</span>, <span class="token keyword">right</span>: <span class="token number">16</span>))
+</code></pre><p><code>offset</code></p><pre><code class="language-swift"><span class="token comment">// Move view from its calculated position</span>
+myView.layout()
+    .size(width: <span class="token number">100</span>, height: <span class="token number">100</span>)
+    .offset(x: <span class="token number">10</span>, y: -<span class="token number">5</span>)
+</code></pre><p><code>Background</code></p><pre><code class="language-swift">VStack { ... }
+    .layout()
+    .size(width: <span class="token number">300</span>, height: <span class="token number">200</span>)
+    .background(.systemBlue)
+</code></pre><p><code>Corner Radius</code></p><pre><code class="language-swift">VStack { ... }
+    .layout()
+    .size(width: <span class="token number">300</span>, height: <span class="token number">200</span>)
+    .background(.systemBlue)
+    .cornerRadius(<span class="token number">16</span>)
+</code></pre><p>등등 SwiftUI의 기능들을 가져와서 사용자가 편하게 설정할수 있도록 제작하였습니다.</p><p>추가적으로 <code>GeometryReader</code> 기능을 제공함으로써 Dynamic Layouts를 작성할수 있도록 하였습니다.</p><pre><code class="language-swift">GeometryReader { proxy in
+    <span class="token comment">// Use proxy.size for dynamic sizing</span>
+    VStack(alignment: .center, spacing: <span class="token number">8</span>) {
+        topBox.layout()
+            .size(width: proxy.size.width * <span class="token number">0.8</span>, height: <span class="token number">60</span>)
+
+        bottomBox.layout()
+            .size(width: proxy.size.width * <span class="token number">0.6</span>, height: <span class="token number">40</span>)
+    }
+}
+.layout()
+.size(width: <span class="token number">360</span>, height: <span class="token number">140</span>)
+</code></pre><p><code>GeometryReader</code> 는 이렇게 동작합니다</p><pre><code class="language-swift">layoutContainer.layoutSubviews()
+</code></pre><p>root Layout에게 availableSize 전달을 합니다.</p><pre><code class="language-swift"><span class="token keyword">func</span> measure(in size: CGSize) -&gt; CGSize
+</code></pre><p>그리고 <code>GeometryReader.measure()</code> 를 실행시켜 부모가 준 사이즈 그대로 반환합니다, 그리고 GeometryReader에서 자식의 사이즈를 직접 측정하지 않습니다.</p><pre><code class="language-swift"><span class="token keyword">let</span> proxy = GeometryProxy(
+    size: rect.size,
+    frame: rect
+)
+
+<span class="token keyword">let</span> contentLayout = content(proxy)
+contentLayout.layout(in: rect)
+</code></pre><p>그 다음으로 <code>GeometryProxy</code> 의 <code>layout(in rect: CGRect)</code>에서 부모가 계산한 최종 rect를 받고, <code>GeometryProxy</code> 생성하고 클로저를 실행시켜 Layout을 생성하는 구조입니다.</p><h3>직접 Layout을 구현해보며,</h3><p>사실상 기존 ManualLayout 과 SwiftUI DSL 코드 여러가지 코드를 레퍼런스를 삼고 정말 시행착오가 많았습니다.</p><p>라이브러리로 프로토타입을 짜고 Example 앱에서 직접 하나하나 정확한 위치에 찍히나 수치와, 제대로 UI가 나오는지 보느라 정말 많은 시간이 사용되었습니다.</p><p>Stack을 처음에 Layout으로 구성했다가, 조금만 복잡한 로직이 들어가는 순간 무너지고, Child Layout에 대한 처리를 하면 제각각 놀아버리는 상황이 생겨서 생각을 바꿔서 UIView 안에 childView로 처리 하는 방식까지 가면서도, 정말 기존 아무런 토대도 없을때 Layout Library를 작성하는 개발자 분들께 존경심이 느껴졌습니다.</p><p>그리고 Spacer 기능을 추가하는 순간 여러가지 문제가 생겨버렸습니다.</p><p><code>ScrollView</code>안에 <code>Spacer()</code>가 있는 경우 처리와 기존엔 Stack들 안에서 Spacer가 어떻게 빈 공간을 계산하고 채워나갈지 작성을 했는데, ScrollView 기능 까지 추가하니, 무한대로 늘어나 버리기도 하고, SwiftUI 에서는 ScrollView 안에 Spacer가 있으면 <code>.zero</code>로 바꿔주던걸 생각해서 처리를 따로 해야되는 지경에 이르고.. 갈엎갈엎을 정말 이제껏 라이브러리를 많이 만들어오며 가장 많이 한 것 같습니다.</p><h3>그래도 인간승리</h3><p>Example앱들도</p><img width = 50% src="https://github.com/user-attachments/assets/bb9c9a83-63c1-4f3b-8a75-d5dee22291b5" /><img width = 50% src="https://github.com/user-attachments/assets/e7a47f4a-ac94-4c26-b293-51dac9c9cccb" /><img width = 50% src="https://github.com/user-attachments/assets/d4fb1ba4-b8c4-4199-b1ef-defe8d7e747d" /><img width = 50% src="https://github.com/user-attachments/assets/2f7aa888-564f-44aa-a7dc-55d0a3fe5c65" /><img width = 50% src="https://github.com/user-attachments/assets/d9e50dc9-48cb-4055-868c-4b0b3d6355f6" /><p>이렇게 잘 작동을 하니 개발하면서 정말 만족도가 높았습니다. 개발을 하며 Layout System에 대해 더욱 더 깊은 지식과, 워낙 난이도가 높은 작업이다보니 저의 개발 능력도 한단계 더 올라간것 같습니다, 추후 이것으로 앱 하나를 만들어볼 생각하니 벌써부터 침이.. 쓰읍</p><p>지금까지 제가 만든 Layout 라이브러리에 대한 설명차 소개를 해봤습니다.</p><h3>👏 기여자를 기다리고 있습니다!</h3><p>그리고 저의 사심. Contributor를 기다리고 있습니다! 현재는 SwiftUI와 비교하면 아직은 부족한 라이브러리기 때문에 많은 관심을 받고 많은 기여를 받아서 좋은 라이브러리로 발전하는것을 목표로 하고 있습니다</p><p>많은 관심 부탁드립니다</p><p><a href="https://github.com/pelagornis/swift-layout/pulls">swift-layout에 pr 날리기</a> 👈</p></div><div class="max-w-2xl mx-auto px-6"><div class="flex flex-col gap-4 px-4 mt-11 mb-4 max-w-3xl mx-auto md:flex-row md:px-0 md:gap-8"><div class="min-w-0 flex-1"><a href="/posts/tuistui" class="flex cursor-pointer items-center w-full h-full"><div class="p-4 w-full h-full rounded-lg bg-black border border-neutral-800 hover:border-neutral-600 hover:shadow-sm transition-all duration-200 cursor-pointer"><p class="text-sm text-gray-500 mb-2">Preview Post</p><h3 class="text-2xl font-semibold text-neutral-300 hover:text-white transition-colors">TuistUI</h3></div></a></div><div class="min-w-0 flex-1"><a href="/posts/swift-concurrency" class="flex cursor-pointer items-center w-full h-full"><div class="p-4 w-full h-full rounded-lg bg-black border border-neutral-800 hover:border-neutral-600 hover:shadow-sm transition-all duration-200 cursor-pointer text-right"><p class="text-sm text-gray-500 mb-2 text-right">Next Post</p><h3 class="text-2xl font-semibold text-neutral-300 hover:text-white transition-colors">Swift Concurrency</h3></div></a></div></div></div></div><script>document.addEventListener('DOMContentLoaded', function() {
+    var viewport = document.querySelector('.screen-carousel-viewport');
+    var strip = document.getElementById('screen-carousel-strip');
+    var dots = document.querySelectorAll('.screen-carousel-dot');
+    if (viewport &amp;&amp; strip &amp;&amp; dots.length) {
+        function goTo(i) {
+            var w = viewport.offsetWidth;
+            viewport.scrollLeft = i * w;
+            dots.forEach(function(d, j) {
+                d.classList.toggle('is-active', j === i);
+            });
+        }
+        dots.forEach(function(dot, i) {
+            dot.addEventListener('click', function() { goTo(i); });
+        });
+        viewport.addEventListener('scroll', function() {
+            var i = Math.round(viewport.scrollLeft / viewport.offsetWidth);
+            i = Math.max(0, Math.min(i, dots.length - 1));
+            dots.forEach(function(d, j) { d.classList.toggle('is-active', j === i); });
+        });
+    }
+    var codeBlocks = document.querySelectorAll('.markdown-content pre');
+    codeBlocks.forEach(function(pre) {
+        var copyButton = document.createElement('button');
+        copyButton.textContent = 'Copy';
+        copyButton.className = 'copy-code-button';
+        copyButton.addEventListener('click', function() {
+            var codeElement = pre.querySelector('code');
+            var codeText = codeElement ? codeElement.textContent : pre.textContent;
+            navigator.clipboard.writeText(codeText).then(function() {
+                copyButton.textContent = 'Copied!';
+                setTimeout(function() { copyButton.textContent = 'Copy'; }, 1500);
+            }).catch(function() {
+                var textArea = document.createElement('textarea');
+                textArea.value = codeText;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                copyButton.textContent = 'Copied!';
+                setTimeout(function() { copyButton.textContent = 'Copy'; }, 1500);
+            });
+        });
+        pre.appendChild(copyButton);
+    });
+});</script></main><footer class="left-0 right-0 flex justify-center items-center px-6 my-10 max-w-4xl mx-auto"><div class="flex flex-row justify-center items-center px-4 py-2 rounded-full border border-neutral-800 bg-neutral-900/90 backdrop-blur-sm"><p class="text-neutral-400 text-sm">© 2025 jihoon.me. All rights reserved.</p></div></footer></body></html>
